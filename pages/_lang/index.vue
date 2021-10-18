@@ -5,18 +5,17 @@
       <img src="../../assets/img/cremaImg/bg1@2x.png" alt="">
     </div> -->
     <!-- <div class="backGroundTwo">
-      <img src="../../assets/img/cremaImg/椭圆形备份 7@2x.png" alt="">
+      <img src="../../assets/img/cremaImg/tuoyuanxingbeifen7@2x.png" alt="">
     </div> -->
     <!-- <div class="backGroundThree">
-      <img src="../../assets/img/cremaImg/椭圆形备份 7@2x.png" alt="">
+      <img src="../../assets/img/cremaImg/tuoyuanxingbeifen7@2x.png" alt="">
     </div> -->
     <!-- <div class="backGroundFour">
       <img src="../../assets/img/cremaImg/bg2@2x.png" alt="">
     </div> -->
     <!-- <div class="backGroundFive">
-      <img src="../../assets/img/cremaImg/椭圆形备份 9@2x.png" alt="">
+      <img src="../../assets/img/cremaImg/cameloid9@2x.png" alt="">
     </div> -->
-    
     <!-- 页面部分 -->
     <div class="core">
       <!-- 头部区域 -->
@@ -53,17 +52,22 @@
             </div>
           </div>
           <video muted="muted" loop="true" autoplay="autoplay" controls="controls">
-              <source src="../../assets/img/cremaImg/UntitledUpdate.mp4" type="video/mp4">
+              <source src="../../assets/img/cremaImg/fourVideo.mp4" type="video/mp4">
           </video>
+          <!-- gif动图展示 -->
+          <!-- <div class="mainReight">
+              <img src="../../assets/img/cremaImg/leaves.gif" alt="">
+          </div> -->
         </div>
       </div>
+      <!-- 插图区域 -->
       <div class="plugIn">
           <div class="plugInAll">
             <div class="backGroundTwo">
-              <img src="../../assets/img/cremaImg/椭圆形备份 7@2x.png" alt="">
+              <img src="../../assets/img/cremaImg/tuoyuanxingbeifen7@2x.png" alt="">
             </div>
             <div class="backGroundThree">
-              <img src="../../assets/img/cremaImg/椭圆形备份 7@2x.png" alt="">
+              <img src="../../assets/img/cremaImg/tuoyuanxingbeifen7@2x.png" alt="">
             </div>
             <div class="OneplugIn">
                 <div class="Oneleft">
@@ -94,6 +98,7 @@
             </div>
         </div>
       </div>
+      <!-- 横向插图区域 -->
       <div class="footerTop">
         <div class="footerTopAll">
             <div class="backGroundFour">
@@ -200,7 +205,7 @@
             <div class="BottomText"> hello@crema.finance</div>
           </div>
           <div class="backGroundFive">
-            <img src="../../assets/img/cremaImg/椭圆形备份 9@2x.png" alt="">
+            <img src="../../assets/img/cremaImg/cameloid9@2x.png" alt="">
           </div>
         </div>
       </div>
@@ -386,6 +391,13 @@ export default {
             height: 224px;
           }
         }
+        .mainReight{
+          img{
+            width: 346px;
+            height: 400px;
+            margin-top: -60px;
+          }
+        }
         video{
           // position: absolute;
           width: 346px;
@@ -499,7 +511,7 @@ export default {
         .OneplugIn{
           width: 764px;
           height: 154px;
-          background: url('../../assets/img/cremaImg/矩形@2x(1).png') no-repeat;
+          background: url('../../assets/img/cremaImg/rectangle@2x.png') no-repeat;
           background-size: cover;
           padding: 20px 0 20px 20px;
           display: flex;
@@ -532,7 +544,7 @@ export default {
         .TwoplugIn{
           width: 764px;
           height: 154px;
-          background: url('../../assets/img/cremaImg/矩形@2x(1).png') no-repeat;
+          background: url('../../assets/img/cremaImg/rectangle@2x.png') no-repeat;
           background-size: cover;
           margin: 44px 0 0 125px;
           padding: 20px 0 20px 20px;
@@ -566,7 +578,7 @@ export default {
         .ThreeplugIn{
           width: 764px;
           height: 154px;
-          background: url('../../assets/img/cremaImg/矩形@2x(1).png') no-repeat;
+          background: url('../../assets/img/cremaImg/rectangle@2x.png') no-repeat;
           background-size: cover;
           margin: 40px 0 0 0;
           padding: 20px 0 20px 20px;
@@ -642,7 +654,7 @@ export default {
               .dialogBoxLeft{
                 width: 178px;
                 height: 148px;
-                background: url('../../assets/img/cremaImg/形状结合@2x.png') no-repeat;
+                background: url('../../assets/img/cremaImg/shapeCombination@2x(4).png') no-repeat;
                 background-size: cover;
                 .dialogBoxImg{
                   margin: 5px 0 0 -44px;
@@ -675,7 +687,7 @@ export default {
               .dialogBoxReight{
                 width: 224px;
                 height: 148px;
-                background: url('../../assets/img/cremaImg/形状结合@2x(1).png') no-repeat;
+                background: url('../../assets/img/cremaImg/shapeCombination@2x(1).png') no-repeat;
                 background-size: cover;
                 .dialogBoxImg{
                   margin: 5px 0 0 -80px;
@@ -742,7 +754,7 @@ export default {
               .FourdialogBoxLeft{
                 width: 194px;
                 height: 149px;
-                background: url('../../assets/img/cremaImg/形状结合@2x(3).png') no-repeat;
+                background: url('../../assets/img/cremaImg/shapeCombination@2x(3).png') no-repeat;
                 background-size: cover;
                 .dialogBoxImg{
                   margin: 5px 0 0 7px;
@@ -775,7 +787,7 @@ export default {
               .FourdialogBoxReight{
                 width: 194px;
                 height: 149px;
-                background: url('../../assets/img/cremaImg/形状结合@2x(3).png') no-repeat;
+                background: url('../../assets/img/cremaImg/shapeCombination@2x(3).png') no-repeat;
                 background-size: cover;
                 .dialogBoxImg{
                   margin: 5px 0 0 -80px;
@@ -905,10 +917,11 @@ export default {
         // width: 375px;
         .top{
           // display: none;
-          width: 400px;
-          padding: 17px 16px 0;
+          width: 340px;
+          padding: 17px 0 0;
           .left{
             line-height: 0;
+            width: 108px;
             img{
               width: 108px;
               height: 30px;
@@ -931,7 +944,7 @@ export default {
         margin:50px 0 0 0;
         .mainAll{
           // display: none;
-          width: 400px;
+          width: 360px;
           height: 500px;
           // background: #bfa;
           margin: 0 auto;
@@ -944,12 +957,22 @@ export default {
             height: 180px;
             left: -20px;
             top: 40px;
+            img{
+              width: 378px;
+              height: 200px;
+            }
+          }
+          .mainReight{
+              width: 236px;
+              height: 273px;
+              margin: 300px 0 0 65px;
+              position: absolute;
           }
           video{
             // display: none;
             width: 236px;
             height: 273px;
-            margin: 300px 0 0 85px;
+            margin: 300px 0 0 65px;
             position: absolute;
 
             // top: 380px;
@@ -1111,10 +1134,10 @@ export default {
           }
           .FooterBotto{
             .footerTopOne{
-              margin: 50px 0 0 0;
+              margin: 50px 0 0 65px;
             }
             .footerTopTwo{
-              width: 400px;
+              width: 340px;
               flex-wrap: wrap;
               height: 100%;
               margin-left: 40px;
@@ -1181,7 +1204,7 @@ export default {
               display: none;
             }
             .footerTopFour{
-              width: 400px;
+              width: 340px;
               flex-wrap: wrap;
               margin-left: 40px;
               // display: none;
@@ -1228,7 +1251,7 @@ export default {
                 left: 84px;
                 width: 337px;
                 height: 24px;
-                background: url('../../assets/img/cremaImg/编组@2x.png') no-repeat;
+                background: url('../../assets/img/cremaImg/bianzu@2x.png') no-repeat;
                 background-size: cover;
                 margin-left:-21.5px;
               }
@@ -1292,15 +1315,15 @@ export default {
           }
           .Left{
             // display: none;
-            width: 500px;
+            width: 300px;
             .LeftTopF{
               position: absolute;
-              left: 0px;
+              left: 10px;
               top: 20px;
             }
             .BottomText{
               position: absolute;
-              left: 0px;
+              left: 10px;
               top: 120px;
             }
           }
@@ -1308,12 +1331,12 @@ export default {
             // display: none;
             .ImgFooter{
               position: absolute;
-              left: -10px;
+              left: 0px;
               top: 60px;
             }
             .BottomText{
               position: absolute;
-              left: 0px;
+              left: 10px;
               top: 90px;
             }
           }
