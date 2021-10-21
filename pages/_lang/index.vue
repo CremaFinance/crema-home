@@ -25,9 +25,9 @@
             <img src="../../assets/img/cremaImg/logo@2x.png" alt="">
           </div>
           <div class="reight">
-            <a href="https://twitter.com/Crema18403445" target="_blank"><img src="../../assets/img/cremaImg/twitter@2x.png" alt=""></a>
-            <a href="https://t.me/cremaofficial" target="_blank"><img src="../../assets/img/cremaImg/telegram@2x.png" alt=""></a>
-            <a href="https://medium.com/@hello_9645" target="_blank"><img src="../../assets/img/cremaImg/medium@2x.png" alt=""></a>
+            <a class="herderreightImg" href="https://twitter.com/Crema18403445" target="_blank"><img src="../../assets/img/cremaImg/twitter@2x.png" alt=""></a>
+            <a class="herderreightImg" href="https://t.me/cremafinance" target="_blank"><img src="../../assets/img/cremaImg/telegram@2x.png" alt=""></a>
+            <a class="herderreightImg" href="https://medium.com/@hello_9645" target="_blank"><img src="../../assets/img/cremaImg/medium@2x.png" alt=""></a>
             <a href="https://discord.gg/5bVg7frrkr" target="_blank"><img src="../../assets/img/cremaImg/discord@2x.png" alt=""></a>
           </div>
         </div>
@@ -343,7 +343,7 @@ export default {
       .top{
         margin: 0 auto;
         height: 45px;
-        width: 1313px;
+        width: 1200px;
         // width: 1940px;
         // padding: 0 300px 0 300px;
         display: flex;
@@ -360,6 +360,8 @@ export default {
           img{
             width: 24px;
             height: 24px;
+          }
+          .herderreightImg{
             margin-right: 20px;
           }
         }
@@ -711,10 +713,10 @@ export default {
                   font-size: 24px;
                 }
                 .dialogBoxThree{
-                  margin-left: -54px;
+                  margin-left: -50px;
                 }
                 .dialogBoxFour{
-                  margin-left: -1px;
+                  margin-left: 0px;
                 }
               }
             }
@@ -828,7 +830,7 @@ export default {
       height: 107px;
       line-height: 43px;
       .footerMain{
-        width: 1313px;
+        width: 1200px;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
@@ -931,6 +933,8 @@ export default {
             img{
               width: 24px;
               height: 24px;
+            }
+            .herderreightImg{
               margin-right: 10px;
             }
           }
@@ -1198,6 +1202,34 @@ export default {
                 background-size: cover;
                 top: 468px;
                 left: 100px;
+                .dialogBoxImg{
+                  margin: 5px 0 0 -70px;
+                  img{
+                    width: 6px;
+                    height: 6px;
+                    margin-right: 4px;
+                  }
+                  span{
+                    font-size: 14px;
+                    color: #bababa;
+                    font-family: 'STYuanti-SC';
+                  }
+
+                }
+                .dialogBoxOne{
+                  padding: 16px 21px 0 8px;
+                  margin-left: -40px;
+                  color: #fff;
+                  font-family: 'STYuanti-SC';
+                  font-weight: bold;
+                  font-size: 24px;
+                }
+                .dialogBoxThree{
+                  margin-left: -40px;
+                }
+                .dialogBoxFour{
+                  margin-left: 11px;
+                }
               }
             }
             .footerTopThree{
