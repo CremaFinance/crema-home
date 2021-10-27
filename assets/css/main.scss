@@ -4,6 +4,32 @@
   src: url("../fonts/Rubik-RegularT.ttf");
   // src: url('../fonts/Rubik-Medium.ttff') format('truetype'); /* Safari, Android, iOS */
 }
+
+@font-face {
+  font-family: "Arial-Black";
+  src: url("../fonts/Arial-Black.ttf");
+  // src: url('../fonts/Rubik-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/Avenir-Medium-woff-7.ttf");
+  // src: url('../fonts/Rubik-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../fonts/Montserrat-Bold.ttf");
+  // src: url('../fonts/Rubik-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "Rubik-Regular";
+  src: url("../fonts/Rubik-Regular.ttf");
+  // src: url('../fonts/Rubik-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "SansSerifExbFLF";
+  src: url("../fonts/SansSerifExbFLF.otf");
+  // src: url('../fonts/Rubik-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
 // @font-face {
 //   font-family: "Rubik-Medium";
 //   src: url("../fonts/Rubik-Medium.ttf");
@@ -11,16 +37,16 @@
 // }
 /* 在全局CSS里引用: */
 /* 滚动条宽度 */
-::-webkit-scrollbar {
-  width: 7px;
-  height: 10px;
-}
+// ::-webkit-scrollbar {
+//   width: 7px;
+//   height: 10px;
+// }
 
-/* 滚动条的滑块 */
-::-webkit-scrollbar-thumb {
-  background-color: #2f2f2f;
-  border-radius: 3px;
-}
+// /* 滚动条的滑块 */
+// ::-webkit-scrollbar-thumb {
+//   background-color: #2f2f2f;
+//   border-radius: 3px;
+// }
 
 html,
 body,

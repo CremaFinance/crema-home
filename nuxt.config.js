@@ -9,7 +9,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    // title: 'Ano ｜ Cardano AMM and DEX' || "",
+    // title: 'Crema ｜ Cardano AMM and DEX' || "",
     title: 'Crema Finance | A Powerful Concentrated Liquidity Protocol.' || "",
     meta: [
       { charset: "utf-8" },
