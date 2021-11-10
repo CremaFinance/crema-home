@@ -91,32 +91,32 @@
         <div class="botTop">Roadmap</div>
         <div class="botCenter">
           <div class="botCenterAll">
-              <div class="botCenterOct bCter">2021 Oct</div>
-              <div class="botCenterNov bCter">2021 Nov</div>
-              <div class="botCenterDec bCter">2021 Dec</div>
-              <div class="botCenterQ bCter">2022 Q1</div>
+              <div class="botCenterOct bCter">2021 Nov</div>
+              <div class="botCenterNov bCter">2021 Dec</div>
+              <div class="botCenterDec bCter">2022 Jan</div>
+              <div class="botCenterQ bCter">2022 Feb-March</div>
           </div>
         </div>
         <div class="botBottom">
           <div class="botBottomPro botBottomAll">
             <p>Project Started</p>
+            <p>R&D Started</p>
             <p>Seed Round Funding</p>
-            <p>MVP Version Launch</p>
           </div>
           <div class="botBottomFun botBottomAll">
-            <p>Strategic Round Funding</p>
-            <p>Official 1.0 Release</p>
-            <p>IDO & Fair Launch</p>
+            <p>MVP Release</p>
+            <p>Integrate CLMM Pool to Aggregators</p>
           </div>
           <div class="botBottomFar botBottomAll">
-            <p>Liquidity Farming</p>
-            <p>Cross-chain Use Case</p>
-            <p>User Experience Optimization</p>
+            <p>TGE & IDO</p>
+            <p>Official V1 Release</p>
+            <p>LP NFT Farming Started</p>
           </div>
           <div class="botBottomCLMM botBottomAll">
-            <p>CLMM V2.0</p>
-            <p>vCRM Mint Function</p>
+            <p>CLMM V2</p>
+            <p>vCRM function</p>
             <p>DAO Platform</p>
+            <p>Liduidity Migration</p>
           </div>
         </div>
       </div>
@@ -719,8 +719,10 @@ export default {
           display: flex;
           flex-wrap: wrap;
           p{
+            width: 100%;
             font-family: 'Avenir';
             font-size: 18px;
+            line-height: 40px;
           }
         }
         .botBottomPro{
@@ -1074,7 +1076,7 @@ export default {
               width: 128px;
               height: 36px;
               line-height: 36px;
-              font-size: 16px;
+              font-size: 14px;
             }
           }
         }
@@ -1083,7 +1085,12 @@ export default {
           width: 245px;
           height: 540px;
           flex-wrap: wrap;
-          margin: -17px 0 0 90px;
+          margin: -17px 0 0 110px;
+          .botBottomAll{
+            p{
+              line-height: 25px;
+            }
+          }
         }
       }
     }
