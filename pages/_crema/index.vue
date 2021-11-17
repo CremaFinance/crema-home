@@ -7,23 +7,16 @@
     <img class="bgFour" src="../../assets/img/cremaWebImg/bg-img4@2x.png" alt="">
     <img class="bgFive" src="../../assets/img/cremaWebImg/bg-img5@2x.png" alt="">
     <img class="bgSix" src="../../assets/img/cremaWebImg/bg-img6@2x.png" alt="">
-    <!-- <video muted="muted" loop="true" autoplay="autoplay" controls="controls">
-        <source src="../../assets/img/cremaWebImg/Color_Lines_Logo.mp4" type="video/mp4">
-    </video> -->
     <!-- 头部导航栏区域 -->
     <div class="header">
       <div class="navLeft">
         <img src="../../assets/img/cremaWebImg/headerLogo.png">
       </div>
       <div class="navReight">
-        <a v-if="!isBirdie" @mouseover="isBirdie = !isBirdie" href="https://twitter.com/Crema_Finance" target="_blank"><img src="../../assets/img/cremaWebImg/icon_twitter@2x.png" alt=""></a>
-        <a v-else="isBirdie" @mouseleave="isBirdie = !isBirdie" href="https://twitter.com/Crema_Finance" target="_blank"><img src="../../assets/img/cremaWebImg/twitter@2x.png" alt=""></a>
-        <a v-if="!isAircraft" @mouseover="isAircraft = !isAircraft" href="https://t.me/cremafinance" target="_blank"><img src="../../assets/img/cremaWebImg/icon_Telegram Group@2x.png" alt=""></a>
-        <a v-else="isAircraft" @mouseleave="isAircraft = !isAircraft" href="https://t.me/cremafinance" target="_blank"><img src="../../assets/img/cremaWebImg/telegram@2x.png" alt=""></a>
-        <a v-if="!isLetter" @mouseover="isLetter = !isLetter" href="https://medium.com/@hello_9645" target="_blank"><img src="../../assets/img/cremaWebImg/icon_Medium@2x.png" alt=""></a>
-        <a v-else="isLetter" @mouseleave="isLetter = !isLetter" href="https://medium.com/@hello_9645" target="_blank"><img src="../../assets/img/cremaWebImg/medium@2x.png" alt=""></a>
-        <a v-if="!isRobot" @mouseover="isRobot = !isRobot" href="https://discord.gg/5bVg7frrkr" target="_blank"><img src="../../assets/img/cremaWebImg/icon_Discord@2x.png" alt=""></a>
-        <a v-else="isRobot" @mouseleave="isRobot = !isRobot" href="https://discord.gg/5bVg7frrkr" target="_blank"><img src="../../assets/img/cremaWebImg/discord@2x.png" alt=""></a>
+        <a href="https://twitter.com/Crema_Finance" target="_blank"></a>
+        <a href="https://t.me/cremafinance" target="_blank"></a>
+        <a href="https://medium.com/@Crema.finance" target="_blank"></a>
+        <a href="https://discord.gg/hCaFmvvPYH" target="_blank"></a>
       </div>
     </div>
     <!-- 主体区域 -->
@@ -34,8 +27,7 @@
             <img src="../../assets/img/cremaWebImg/headerTitle.png" alt="">
           </div>
           <div class="topmain">A Powerful Concentrated Liquidity Protocol.</div>
-          <a v-if="!isTopBtn" @mouseover="isTopBtn = !isTopBtn" href="https://beta.crema.finance/" target="_blank" class="topBtn">BETA APP</a>
-          <a v-else="isTopBtn" @mouseleave="isTopBtn = !isTopBtn" href="https://beta.crema.finance/" target="_blank" class="topBtnA">BETA APP</a>
+          <a href="https://beta.crema.finance/" target="_blank" class="topBtn">BETA APP</a>
           <div class="gradient"></div>
         </div>
         <div class="topImg">
@@ -91,28 +83,27 @@
         <div class="botTop">Roadmap</div>
         <div class="botCenter">
           <div class="botCenterAll">
-              <div class="botCenterOct bCter">2021 Nov</div>
-              <div class="botCenterNov bCter">2021 Dec</div>
-              <div class="botCenterDec bCter">2022 Jan</div>
-              <div class="botCenterQ bCter">2022 Feb-March</div>
+              <div>2021 Nov</div>
+              <div>2021 Dec</div>
+              <div>2022 Jan</div>
+              <div>2022 Feb-Mar</div>
           </div>
         </div>
         <div class="botBottom">
-          <div class="botBottomPro botBottomAll">
+          <div class="botBottomPro">
             <p>Project Started</p>
             <p>R&D Started</p>
-            <p>Seed Round Funding</p>
           </div>
-          <div class="botBottomFun botBottomAll">
+          <div class="botBottomFun">
             <p>MVP Release</p>
             <p>Integrate CLMM Pool to Aggregators</p>
           </div>
-          <div class="botBottomFar botBottomAll">
+          <div class="botBottomFar">
             <p>TGE & IDO</p>
             <p>Official V1 Release</p>
             <p>LP NFT Farming Started</p>
           </div>
-          <div class="botBottomCLMM botBottomAll">
+          <div class="botBottomCLMM">
             <p>CLMM V2</p>
             <p>vCRM function</p>
             <p>DAO Platform</p>
@@ -132,8 +123,8 @@
           <div class="ReiImg">
             <a href="https://twitter.com/Crema_Finance" target="_blank"><img src="../../assets/img/cremaWebImg/icon_twitter@2x.png" alt=""></a>
             <a href="https://t.me/cremafinance" target="_blank"><img src="../../assets/img/cremaWebImg/icon_Telegram Group@2x.png" alt=""></a>
-            <a href="https://medium.com/@hello_9645" target="_blank"><img src="../../assets/img/cremaWebImg/icon_Medium@2x.png" alt=""></a>
-            <a href="https://discord.gg/5bVg7frrkr" target="_blank"><img src="../../assets/img/cremaWebImg/icon_Discord@2x.png" alt=""></a>
+            <a href="https://medium.com/@Crema.finance" target="_blank"><img src="../../assets/img/cremaWebImg/icon_Medium@2x.png" alt=""></a>
+            <a href="https://discord.gg/hCaFmvvPYH" target="_blank"><img src="../../assets/img/cremaWebImg/icon_Discord@2x.png" alt=""></a>
           </div>
           <p>hello@crema.finance</p>
         </div>
@@ -154,11 +145,6 @@ export default {
       isShow3: false,
       isShow4: false,
       showActive: 1,
-      isTopBtn:false,
-      isBirdie:false,
-      isAircraft:false,
-      isLetter:false,
-      isRobot:false,
       localeList: [
         {
           label: "English",
@@ -343,12 +329,6 @@ export default {
     right: 0;
     top: 1140px;
   }
-  // video{
-  //   position: absolute;
-  //   width: 100%;
-  //   height: 500px;
-  //   top: 163px;
-  // }
   .header {
     width: 1100px;
     height: 163px;
@@ -369,9 +349,35 @@ export default {
       height: 20px;
       display: flex;
       justify-content: space-between;
-      img{
+      a{
+        display: block;
         width: 20px;
         height: 20px;
+        background-size: 100% 100%;
+      }
+      > a:nth-child(1){
+        background-image: url('../../assets/img/cremaWebImg/icon_twitter@2x.png');
+      }
+      > a:nth-child(1):hover{
+        background-image: url('../../assets/img/cremaWebImg/twitter@2x.png');
+      }
+      > a:nth-child(2){
+        background-image: url('../../assets/img/cremaWebImg/icon_Telegram Group@2x.png');
+      }
+      > a:nth-child(2):hover{
+        background-image: url('../../assets/img/cremaWebImg/telegram@2x.png');
+      }
+      > a:nth-child(3){
+        background-image: url('../../assets/img/cremaWebImg/icon_Medium@2x.png');
+      }
+      > a:nth-child(3):hover{
+        background-image: url('../../assets/img/cremaWebImg/medium@2x.png');
+      }
+      > a:nth-child(4){
+        background-image: url('../../assets/img/cremaWebImg/icon_Discord@2x.png');
+      }
+      > a:nth-child(4):hover{
+        background-image: url('../../assets/img/cremaWebImg/discord@2x.png');
       }
     }
   }
@@ -379,18 +385,15 @@ export default {
     width: 100%;
     height: 2019px;
     padding: 10px 0 0 0;
-    // background: #bfa;
     .top{
       height: 386px;
       width: 1100px;
-      // background: #bbb;
       display: flex;
       justify-content: space-between;
       margin: 0 auto;
       .topHeader{
         width: 493px;
         height: 386px;
-        // background:#bfa;
         position: relative;
         .topTitle{
           width: 484px;
@@ -425,19 +428,8 @@ export default {
           font-family: 'Arial-Black';
           margin-top: 28px;
         }
-        .topBtnA{
-          display: block;
-          width: 163px;
-          height: 54px;
-          border-radius: 27px;
-          background: linear-gradient(223deg, #A6FFEF 0%, #7AAEFF 100%);
-          text-align: center;
-          line-height: 54px;
-          color: #fff;
-          font-size: 16px;
-          font-weight: 900;
-          font-family: 'Arial-Black';
-          margin-top: 28px;
+        .topBtn:hover{
+          background: linear-gradient(223deg, #4E90FA 0%, #4CFFDF 100%);
         }
         .gradient{
           position: absolute;
@@ -514,7 +506,6 @@ export default {
     .center{
       height: 984px;
       width: 100%;
-      // background: #ccc;
       margin-top: 145px;
       .centerAll{
         width: 1100px;
@@ -554,18 +545,6 @@ export default {
             width: 420px;
             height: 288px;
           }
-          // .floatOne{
-          //   animation: icon 3s linear infinite;
-          // }
-          // .floatTwo{
-          //   animation: icon 3s linear infinite;
-          // }
-          // .floatThree{
-          //   animation: icon 3s linear infinite;
-          // }
-          // .floatFour{
-          //   animation: icon 3s linear infinite;
-          // }
         }
       }
       .centerTop{
@@ -669,7 +648,6 @@ export default {
     .bottom{
       height: 364px;
       width: 100%;
-      // background: #ddd;
       margin-top: 120px;
       position: relative;
       z-index: 200;
@@ -689,11 +667,10 @@ export default {
         .botCenterAll{
           width: 1100px;
           height: 60px;
-          // background: #000;
           margin: 0 auto;
           display: flex;
           justify-content: space-between;
-          .bCter{
+          > div{
             width: 200px;
             height: 60px;
             background: linear-gradient(224deg, rgba(172,255,240,0.2) 0%, rgba(144,156,255,0.2) 45%, rgba(237,176,255,0.2) 100%);
@@ -712,7 +689,7 @@ export default {
         margin: 32px auto 0;
         display: flex;
         justify-content: space-between;
-        .botBottomAll{
+        > div{
           width: 230px;
           height: 90px;
           color: #959CAC;
@@ -749,7 +726,6 @@ export default {
       width: 1100px;
       height: 100px;
       margin: 0 auto;
-      // background: #000;
       display: flex;
       justify-content: space-between;
       .footerLeft{
@@ -830,7 +806,6 @@ export default {
 }
 @media screen and (max-width: 750px) {
   .outer {
-    // background: #bae;
     .bgOne{
       display: none;
     }
@@ -850,8 +825,6 @@ export default {
       display: none;
     }
     .header{
-      // padding: 0 20px 0;
-      // display: none;
       width: 345px;
       height: 101px;
       .navLeft{
@@ -872,7 +845,6 @@ export default {
       }
     }
     .main{
-      // display: none;
       padding: 0 20px 0;
       height: 2441px;
       .top{
@@ -905,14 +877,6 @@ export default {
             line-height: 36px;
             margin: 24px auto 0;
           }
-          .topBtnA{
-            width: 111px;
-            height: 36px;
-            font-size: 12px;
-            border-radius: 18px;
-            line-height: 36px;
-            margin: 24px auto 0;
-          }
           .gradient{
             width: 120px;
             height: 13px;
@@ -920,7 +884,6 @@ export default {
           }
         }
         .topImg{
-          // display: none;
           width: 335px;
           height: 252px;
           .topImg-one{
@@ -968,7 +931,6 @@ export default {
         }
       }
       .center{
-        // display: none;
         height: 1325px;
         width: 100%;
         margin-top: 0;
@@ -1058,7 +1020,6 @@ export default {
         }
       }
       .bottom{
-        // display: none;
         height: 595px;
         margin-top: 32px;
         .botTop{
@@ -1072,7 +1033,7 @@ export default {
             height: 540px;
             flex-wrap: wrap;
             margin: 0 0 0 10px;
-            .bCter{
+            > div{
               width: 128px;
               height: 36px;
               line-height: 36px;
@@ -1081,12 +1042,11 @@ export default {
           }
         }
         .botBottom{
-          // display: none;
           width: 245px;
           height: 540px;
           flex-wrap: wrap;
           margin: -17px 0 0 110px;
-          .botBottomAll{
+          > div{
             p{
               line-height: 25px;
             }
@@ -1095,7 +1055,6 @@ export default {
       }
     }
     .footer{
-      // display: none;
       width: 100%;
       height: 200px;
       padding: 0 0 0 0;
@@ -1115,7 +1074,6 @@ export default {
           }
         }
         .footerReight{
-          // display: none;
           position: absolute;
           height: 66px;
           left: 106px;
