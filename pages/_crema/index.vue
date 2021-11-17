@@ -34,8 +34,8 @@
             <img src="../../assets/img/cremaWebImg/headerTitle.png" alt="">
           </div>
           <div class="topmain">A Powerful Concentrated Liquidity Protocol.</div>
-          <a v-if="!isTopBtn" @mouseover="isTopBtn = !isTopBtn" href="https://app.crema.finance/" target="_blank" class="topBtn">LAUNCH APP</a>
-          <a v-else="isTopBtn" @mouseleave="isTopBtn = !isTopBtn" href="https://app.crema.finance/" target="_blank" class="topBtnA">LAUNCH APP</a>
+          <a v-if="!isTopBtn" @mouseover="isTopBtn = !isTopBtn" href="https://beta.crema.finance/" target="_blank" class="topBtn">BETA APP</a>
+          <a v-else="isTopBtn" @mouseleave="isTopBtn = !isTopBtn" href="https://beta.crema.finance/" target="_blank" class="topBtnA">BETA APP</a>
           <div class="gradient"></div>
         </div>
         <div class="topImg">

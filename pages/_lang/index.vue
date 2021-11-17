@@ -409,7 +409,7 @@ export default {
           // right: 400px;
           // top: 175px;
         }
-        video::-webkit-media-controls-enclosure{ 
+        video::-webkit-media-controls-enclosure{
           display: none;
         }
         .mainLeft{
@@ -613,7 +613,7 @@ export default {
           }
         }
       }
-      
+
     }
     .footerTop{
         height: 540px;
@@ -822,9 +822,9 @@ export default {
               }
             }
           }
-          
+
         }
-       
+
     }
     .footer{
       width: 100%;
@@ -941,7 +941,7 @@ export default {
           }
         }
       }
-      
+
       .main{
         // display: none;
         // width: 500px;
@@ -1008,7 +1008,7 @@ export default {
             }
           }
         }
-        
+
       }
       .plugIn{
         // display: none;
@@ -1146,7 +1146,7 @@ export default {
               flex-wrap: wrap;
               height: 100%;
               margin-left: 40px;
-              
+
               .dialogBoxLeft{
                 // margin-left: 16px;
                 position: absolute;
@@ -1324,11 +1324,11 @@ export default {
                 .dialogBoxFour{
                   margin-left: -68px;
                 }
-                
+
               }
             }
           }
-          
+
         }
       }
       .footer{
