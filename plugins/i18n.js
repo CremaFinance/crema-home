@@ -2,6 +2,9 @@ import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 
 Vue.use(VueI18n);
+// 引入copy
+import VueClipboard from 'vue-clipboard2';
+Vue.use(VueClipboard);
 
 export default({app, store}) => {
   let locale = store.state.locale;

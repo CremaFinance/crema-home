@@ -121,12 +121,19 @@
         </div>
         <div class="footerReight">
           <div class="ReiImg">
-            <a href="https://twitter.com/Crema_Finance" target="_blank"><img src="../../assets/img/cremaWebImg/icon_twitter@2x.png" alt=""></a>
-            <a href="https://t.me/cremafinance" target="_blank"><img src="../../assets/img/cremaWebImg/icon_Telegram Group@2x.png" alt=""></a>
-            <a href="https://medium.com/@Crema.finance" target="_blank"><img src="../../assets/img/cremaWebImg/icon_Medium@2x.png" alt=""></a>
-            <a href="https://discord.gg/hCaFmvvPYH" target="_blank"><img src="../../assets/img/cremaWebImg/icon_Discord@2x.png" alt=""></a>
+            <a href="https://twitter.com/Crema_Finance" target="_blank"></a>
+            <a href="https://t.me/cremafinance" target="_blank"></a>
+            <a href="https://medium.com/@Crema.finance" target="_blank"></a>
+            <a href="https://discord.gg/hCaFmvvPYH" target="_blank"></a>
           </div>
-          <p>hello@crema.finance</p>
+          <p class="oneEmail">
+            hello@crema.finance
+            <a href="##" v-clipboard:copy="footerEmail"></a>
+          </p>
+          <p>
+            bd@crema.finance
+            <a href="##" v-clipboard:copy="footerEmailbd"></a>
+          </p>
         </div>
       </div>
     </div>
@@ -145,6 +152,8 @@ export default {
       isShow3: false,
       isShow4: false,
       showActive: 1,
+      footerEmail:'hello@crema.finance',
+      footerEmailbd:'bd@crema.finance',
       localeList: [
         {
           label: "English",
@@ -163,7 +172,6 @@ export default {
           key: "简体中文",
         },
       },
-      // locale: "简体中文",
     };
   },
   computed: {
@@ -186,6 +194,7 @@ export default {
   },
   mounted() {},
   methods: {
+    
     mouseOver() {
       this.openList();
     },
@@ -330,7 +339,7 @@ export default {
     top: 1140px;
   }
   .header {
-    width: 1100px;
+    width: 60%;
     height: 163px;
     display: flex;
     justify-content: space-between;
@@ -387,16 +396,16 @@ export default {
     padding: 10px 0 0 0;
     .top{
       height: 386px;
-      width: 1100px;
+      width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       margin: 0 auto;
       .topHeader{
-        width: 493px;
+        width: 40%;
         height: 386px;
         position: relative;
         .topTitle{
-          width: 484px;
+          width: 100%;
           height: 51px;
           margin-top: 108px;
           position: relative;
@@ -407,7 +416,7 @@ export default {
           }
         }
         .topmain{
-          width: 505px;
+          width: 100%;
           height: 40px;
           font-size: 24px;
           font-family: 'Avenir';
@@ -508,18 +517,18 @@ export default {
       width: 100%;
       margin-top: 145px;
       .centerAll{
-        width: 1100px;
+        margin: 0 auto;
+        width: 55%;
         height: 288px;
         background: rgba(255, 255, 255, 0.05);
         border-radius: 30px;
         padding: 0 0 0 40px;
         display: flex;
-        margin: 0 auto;
         justify-content: space-between;
         .centerTopLeft{
-          width: 572px;
+          width: 60%;
           height: 288px;
-          padding: 50px 0 50px;
+          padding: 4% 0 50px;
           display: flex;
           flex-wrap: wrap;
           align-content: space-around;
@@ -539,10 +548,10 @@ export default {
           }
         }
         .centerTopReight{
-          width: 420px;
+          width: 60%;
           height: 288px;
           img{
-            width: 420px;
+            width: 100%;
             height: 288px;
           }
         }
@@ -552,7 +561,7 @@ export default {
           position: relative;
           .floatOne{
             position: absolute;
-            left: 83px;
+            left: 20%;
             top: 32px;
             width: 21px;
             height: 21px;
@@ -560,7 +569,7 @@ export default {
           }
           .floatTwo{
             position: absolute;
-            left: 333px;
+            left: 80%;
             top: 96px;
             width: 19px;
             height: 18px;
@@ -582,7 +591,7 @@ export default {
           position: relative;
           .floatOne{
             position: absolute;
-            left: 114px;
+            left: 25%;
             top: 29px;
             width: 19px;
             height: 19px;
@@ -590,7 +599,7 @@ export default {
           }
           .floatTwo{
             position: absolute;
-            left: 269px;
+            left: 65%;
             top: 156px;
             width: 47px;
             height: 46px;
@@ -598,7 +607,7 @@ export default {
           }
           .floatThree{
             position: absolute;
-            left: 89px;
+            left: 10%;
             top: 135px;
             width: 95px;
             height: 96px;
@@ -612,7 +621,7 @@ export default {
           position: relative;
           .floatOne{
             position: absolute;
-            left: 173px;
+            left: 40%;
             top: 44px;
             width: 77px;
             height: 77px;
@@ -620,7 +629,7 @@ export default {
           }
           .floatTwo{
             position: absolute;
-            left: 94px;
+            left: 20%;
             top: 74px;
             width: 78px;
             height: 78px;
@@ -628,7 +637,7 @@ export default {
           }
           .floatThree{
             position: absolute;
-            left: 249px;
+            left: 60%;
             top: 74px;
             width: 79px;
             height: 78px;
@@ -636,7 +645,7 @@ export default {
           }
           .floatFour{
             position: absolute;
-            left: 156px;
+            left: 36%;
             top: 90px;
             width: 111px;
             height: 111px;
@@ -652,7 +661,7 @@ export default {
       position: relative;
       z-index: 200;
       .botTop{
-        width: 1100px;
+        width: 60%;
         height: 20px;
         margin: 0 auto;
         color: #fff;
@@ -665,7 +674,7 @@ export default {
         background: rgba(255, 255, 255, 0.05);
         margin-top: 53px;
         .botCenterAll{
-          width: 1100px;
+          width: 60%;
           height: 60px;
           margin: 0 auto;
           display: flex;
@@ -678,13 +687,13 @@ export default {
             text-align: center;
             line-height: 60px;
             color: #fff;
-            font-size: 20px;
+            font-size: 16px;
             font-family: 'SansSerifExbFLF';
           }
         }
       }
       .botBottom{
-        width: 1100px;
+        width: 60%;
         height: 90px;
         margin: 32px auto 0;
         display: flex;
@@ -703,7 +712,7 @@ export default {
           }
         }
         .botBottomPro{
-          width: 255px;
+          width: 240px;
         }
         .botBottomFun{
           width: 250px;
@@ -723,7 +732,7 @@ export default {
     background: #232323;
     padding: 40px 0 40px 0;
     .footerAll{
-      width: 1100px;
+      width: 60%;
       height: 100px;
       margin: 0 auto;
       display: flex;
@@ -745,7 +754,7 @@ export default {
         }
       }
       .footerReight{
-        width: 170px;
+        width: 355px;
         height: 100px;
         display: flex;
         flex-wrap: wrap;
@@ -757,16 +766,54 @@ export default {
           width: 170px;
           height: 20px;
           text-align: right;
-          img{
+          a{
             width: 20px;
             height: 20px;
+            background-size: 100% 100%;
+          }
+          > a:nth-child(1){
+            background-image: url('../../assets/img/cremaWebImg/icon_twitter@2x.png');
+          }
+          > a:nth-child(1):hover{
+            background-image: url('../../assets/img/cremaWebImg/twitter@2x.png');
+          }
+          > a:nth-child(2){
+            background-image: url('../../assets/img/cremaWebImg/icon_Telegram Group@2x.png');
+          }
+          > a:nth-child(2):hover{
+            background-image: url('../../assets/img/cremaWebImg/telegram@2x.png');
+          }
+          > a:nth-child(3){
+            background-image: url('../../assets/img/cremaWebImg/icon_Medium@2x.png');
+          }
+          > a:nth-child(3):hover{
+            background-image: url('../../assets/img/cremaWebImg/medium@2x.png');
+          }
+          > a:nth-child(4){
+            background-image: url('../../assets/img/cremaWebImg/icon_Discord@2x.png');
+          }
+          > a:nth-child(4):hover{
+            background-image: url('../../assets/img/cremaWebImg/discord@2x.png');
           }
         }
         p{
+          display: flex;
           font-size: 16px;
           color: rgba(255,255,255,0.5);
           text-align: right;
           font-family: 'Avenir';
+          a{
+            width: 20px;
+            height: 20px;
+            background-size: 100% 100%;
+            background-image: url('../../assets/img/cremaWebImg/icon_copy@2x.png');
+          }
+          a:hover{
+            background-image: url('../../assets/img/cremaWebImg/hoverwitch.png');
+          }
+        }
+        .oneEmail{
+          margin-right: 20px;
         }
       }
     }
@@ -1056,31 +1103,40 @@ export default {
     }
     .footer{
       width: 100%;
-      height: 200px;
+      height: 220px;
       padding: 0 0 0 0;
       .footerAll{
         width: 375px;
         height: 200px;
         flex-wrap: wrap;
         position: relative;
+        padding-top: 10px;
         .footerLeft{
           margin: 0 auto;
-          height: 200px;
+          height: 210px;
           img{
-            margin: 0 auto;
+            margin: -40px auto 0;
           }
           p{
-            margin: 0 auto;
+            margin: 0 auto -30px;
           }
         }
         .footerReight{
+          width: 180px;
           position: absolute;
           height: 66px;
           left: 106px;
-          top: 71px;
+          top: 65px;
           margin: 0 auto;
+          justify-content: center;
+          .ReiImg{
+            width: 240px;
+          }
           p{
-            margin: 0 auto;
+            margin: 12px auto 0;
+          }
+          .oneEmail{
+            margin-right: 0px;
           }
         }
       }
