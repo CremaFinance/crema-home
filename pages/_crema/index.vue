@@ -127,12 +127,12 @@
             <a href="https://discord.gg/hCaFmvvPYH" target="_blank"></a>
           </div>
           <p class="oneEmail">
-            hello@crema.finance
-            <a href="##" v-clipboard:copy="footerEmail"></a>
+            <span>hello@crema.finance</span>
+            <a href="##" ref="copya" @click="copy('a')"></a>
           </p>
           <p>
-            bd@crema.finance
-            <a href="##" v-clipboard:copy="footerEmailbd"></a>
+            <span>bd@crema.finance</span>
+            <a href="##" ref="copy" @click="copy('b')"></a>
           </p>
         </div>
       </div>
@@ -152,8 +152,6 @@ export default {
       isShow3: false,
       isShow4: false,
       showActive: 1,
-      footerEmail:'hello@crema.finance',
-      footerEmailbd:'bd@crema.finance',
       localeList: [
         {
           label: "English",
@@ -172,6 +170,7 @@ export default {
           key: "简体中文",
         },
       },
+      // locale: "简体中文",
     };
   },
   computed: {
@@ -194,7 +193,26 @@ export default {
   },
   mounted() {},
   methods: {
-    
+    copy(e){
+      if(e == 'a'){
+        let text = this.$refs.copya.previousSibling.previousSibling;
+        const selection = window.getSelection();
+        if(selection.rangeCount > 0) selection.removeAllRanges();
+        const range = document.createRange();
+        range.selectNodeContents(text);
+        selection.addRange(range);
+        document.execCommand("copy");
+      }else{
+        let text = this.$refs.copy.previousSibling.previousSibling;
+        const selection = window.getSelection();
+        if(selection.rangeCount > 0) selection.removeAllRanges();
+        const range = document.createRange();
+        range.selectNodeContents(text);
+        selection.addRange(range);
+        document.execCommand("copy");
+      }
+      
+    },
     mouseOver() {
       this.openList();
     },
@@ -339,7 +357,7 @@ export default {
     top: 1140px;
   }
   .header {
-    width: 60%;
+    width: 1100px;
     height: 163px;
     display: flex;
     justify-content: space-between;
@@ -396,16 +414,16 @@ export default {
     padding: 10px 0 0 0;
     .top{
       height: 386px;
-      width: 100%;
+      width: 1100px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       margin: 0 auto;
       .topHeader{
-        width: 40%;
+        width: 493px;
         height: 386px;
         position: relative;
         .topTitle{
-          width: 100%;
+          width: 484px;
           height: 51px;
           margin-top: 108px;
           position: relative;
@@ -416,7 +434,7 @@ export default {
           }
         }
         .topmain{
-          width: 100%;
+          width: 505px;
           height: 40px;
           font-size: 24px;
           font-family: 'Avenir';
@@ -517,18 +535,18 @@ export default {
       width: 100%;
       margin-top: 145px;
       .centerAll{
-        margin: 0 auto;
-        width: 55%;
+        width: 1100px;
         height: 288px;
         background: rgba(255, 255, 255, 0.05);
         border-radius: 30px;
         padding: 0 0 0 40px;
         display: flex;
+        margin: 0 auto;
         justify-content: space-between;
         .centerTopLeft{
-          width: 60%;
+          width: 572px;
           height: 288px;
-          padding: 4% 0 50px;
+          padding: 50px 0 50px;
           display: flex;
           flex-wrap: wrap;
           align-content: space-around;
@@ -548,10 +566,10 @@ export default {
           }
         }
         .centerTopReight{
-          width: 60%;
+          width: 420px;
           height: 288px;
           img{
-            width: 100%;
+            width: 420px;
             height: 288px;
           }
         }
@@ -561,7 +579,7 @@ export default {
           position: relative;
           .floatOne{
             position: absolute;
-            left: 20%;
+            left: 83px;
             top: 32px;
             width: 21px;
             height: 21px;
@@ -569,7 +587,7 @@ export default {
           }
           .floatTwo{
             position: absolute;
-            left: 80%;
+            left: 333px;
             top: 96px;
             width: 19px;
             height: 18px;
@@ -591,7 +609,7 @@ export default {
           position: relative;
           .floatOne{
             position: absolute;
-            left: 25%;
+            left: 114px;
             top: 29px;
             width: 19px;
             height: 19px;
@@ -599,7 +617,7 @@ export default {
           }
           .floatTwo{
             position: absolute;
-            left: 65%;
+            left: 269px;
             top: 156px;
             width: 47px;
             height: 46px;
@@ -607,7 +625,7 @@ export default {
           }
           .floatThree{
             position: absolute;
-            left: 10%;
+            left: 89px;
             top: 135px;
             width: 95px;
             height: 96px;
@@ -621,7 +639,7 @@ export default {
           position: relative;
           .floatOne{
             position: absolute;
-            left: 40%;
+            left: 173px;
             top: 44px;
             width: 77px;
             height: 77px;
@@ -629,7 +647,7 @@ export default {
           }
           .floatTwo{
             position: absolute;
-            left: 20%;
+            left: 94px;
             top: 74px;
             width: 78px;
             height: 78px;
@@ -637,7 +655,7 @@ export default {
           }
           .floatThree{
             position: absolute;
-            left: 60%;
+            left: 249px;
             top: 74px;
             width: 79px;
             height: 78px;
@@ -645,7 +663,7 @@ export default {
           }
           .floatFour{
             position: absolute;
-            left: 36%;
+            left: 156px;
             top: 90px;
             width: 111px;
             height: 111px;
@@ -661,7 +679,7 @@ export default {
       position: relative;
       z-index: 200;
       .botTop{
-        width: 60%;
+        width: 1100px;
         height: 20px;
         margin: 0 auto;
         color: #fff;
@@ -674,7 +692,7 @@ export default {
         background: rgba(255, 255, 255, 0.05);
         margin-top: 53px;
         .botCenterAll{
-          width: 60%;
+          width: 1100px;
           height: 60px;
           margin: 0 auto;
           display: flex;
@@ -687,13 +705,13 @@ export default {
             text-align: center;
             line-height: 60px;
             color: #fff;
-            font-size: 16px;
+            font-size: 20px;
             font-family: 'SansSerifExbFLF';
           }
         }
       }
       .botBottom{
-        width: 60%;
+        width: 1100px;
         height: 90px;
         margin: 32px auto 0;
         display: flex;
@@ -712,7 +730,7 @@ export default {
           }
         }
         .botBottomPro{
-          width: 240px;
+          width: 255px;
         }
         .botBottomFun{
           width: 250px;
@@ -732,7 +750,7 @@ export default {
     background: #232323;
     padding: 40px 0 40px 0;
     .footerAll{
-      width: 60%;
+      width: 1100px;
       height: 100px;
       margin: 0 auto;
       display: flex;
