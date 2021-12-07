@@ -389,7 +389,7 @@ export default {
         background-image: url('../../assets/img/cremaWebImg/twitter@2x.png');
       }
       > a:nth-child(2){
-        background-image: url('../../assets/img/cremaWebImg/icon_Telegram Group@2x.png');
+        background-image: url('../../assets/img/cremaWebImg/icon_TelegramGroup@2x.png');
       }
       > a:nth-child(2):hover{
         background-image: url('../../assets/img/cremaWebImg/telegram@2x.png');
@@ -796,7 +796,7 @@ export default {
             background-image: url('../../assets/img/cremaWebImg/twitter@2x.png');
           }
           > a:nth-child(2){
-            background-image: url('../../assets/img/cremaWebImg/icon_Telegram Group@2x.png');
+            background-image: url('../../assets/img/cremaWebImg/icon_TelegramGroup@2x.png');
           }
           > a:nth-child(2):hover{
             background-image: url('../../assets/img/cremaWebImg/telegram@2x.png');
