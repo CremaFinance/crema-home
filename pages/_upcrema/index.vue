@@ -16,7 +16,7 @@
       </div>
     </div>
     <!-- 主体区域 -->
-    <div class="main">
+    <div class="main" :class="faqVal ? 'mainBig':''">
       <div class="top">
         <!-- <img src="../../assets/img/cremaWebImg/cremaHeader.png" alt=""> -->
           <div></div>
@@ -46,7 +46,7 @@
           </div>
         </div>
       </div>
-      <div class="edges">
+      <div class="edges" @mouseover="changeOff()" @mouseleave="changeGo()">
         <div class="botTop">
           <span>Our Edges</span>
           <!-- <img src="../../assets/img/cremaWebImg/cremaTitlea.png" alt=""> -->
@@ -62,10 +62,14 @@
               <div :class="this.num == 4 ? 'btnSize':''" @click="cutEle(4)"></div>
             </div>
           </div>
-          <div class="edgesRight" :class="num == 1 ? 'eone' : num == 2 ? 'etwo' : num == 3 ? 'ethree' : 'efour'"></div>
+          <div class="edgesRight" 
+              :class="num == 1 ? 'eone' :
+              num == 2 ? 'etwo' : 
+              num == 3 ? 'ethree' : 'efour'"></div>
         </div>
       </div>
       <div class="Roadmap">
+        <div></div>
         <div class="botTop">
           <span>Roadmap</span>
           <!-- <img src="../../assets/img/cremaWebImg/cremaTitlea.png" alt=""> -->
@@ -77,6 +81,7 @@
                 <div>
                   <span>Project Started</span>
                   <span>R&D Started</span>
+                  <span>Beta Release</span>
                 </div>
              </div>
              <div>
@@ -108,7 +113,7 @@
            </div>
         </div>
       </div>
-      <div class="bottom">
+      <div class="bottom" :class="faqVal ? 'bottomBig':''">
         <div class="botTop">
           <span>FAQ</span>
           <!-- <img src="../../assets/img/cremaWebImg/cremaTitlea.png" alt=""> -->
@@ -127,25 +132,29 @@
     <!-- 底部区域 -->
     <div class="footer">
       <div class="footerAll">
-        <div class="footerLeft">
+        <div>
           <img src="../../assets/img/cremaWebImg/footerLogo.png" alt="">
-          <p>© 2021 Crema. All rights reserved.</p>
-        </div>
-        <div class="footerReight">
           <div class="ReiImg">
             <a href="https://twitter.com/Crema_Finance" target="_blank"></a>
             <a href="https://t.me/cremafinance" target="_blank"></a>
             <a href="https://medium.com/@Crema.finance" target="_blank"></a>
             <a href="https://discord.gg/hCaFmvvPYH" target="_blank"></a>
           </div>
-          <p class="oneEmail">
-            <span>hello@crema.finance</span>
-            <a href="##" ref="copya" @click="copy('a')"></a>
-          </p>
-          <p>
-            <span>bd@crema.finance</span>
-            <a href="##" ref="copy" @click="copy('b')"></a>
-          </p>
+        </div>
+        <div>
+          <div>
+            <p>Cooperate & Invest</p>
+            <p>bd@crema.finance</p>
+            <!-- <a href="##" ref="copya" @click="copy('a')"></a> -->
+          </div>
+          <div>
+            <p>General Inquiries</p>
+            <p>hello@crema.finance</p>
+            <!-- <a href="##" ref="copy" @click="copy('b')"></a> -->
+          </div>
+        </div>
+        <div>
+            <p>© 2021 Crema. All rights reserved.</p>
         </div>
       </div>
     </div>
@@ -251,12 +260,22 @@ export default {
     },
   },
   mounted() {
+    // 定时器开启
     this.timer = setInterval(this.get, 5000);
   },
   beforeDestroy() {
     clearInterval(this.timer);
   },
   methods: {
+    
+    // 当鼠标移入时关闭定时器
+    changeOff(){
+      clearInterval(this.timer);
+    },
+    // 当鼠标移出时开启定时器
+    changeGo(){
+      this.timer = setInterval(this.get, 5000);
+    },
     get() {
       this.num ++;
       if(this.num == 5){
@@ -365,7 +384,7 @@ export default {
   position: relative;
   font-family: 'SansSerifExbFLF';
   .header {
-    width: 1200px;
+    width: 1000px;
     height: 115px;
     display: flex;
     justify-content: space-between;
@@ -444,7 +463,8 @@ export default {
   }
   .main{
     width: 100%;
-    height: 5205px;
+    // height: 5205px;
+    height: 4750px;
     padding: 10px 0 0 0;
     font-family: 'SansSerifExbFLF';
     .top{
@@ -460,7 +480,8 @@ export default {
         // background-image: url('../../assets/img/cremaWebImg/cremaImgheader.png');
         background-size: 100% 100%;
         width: 1400px;
-        height: 73%;
+        // height: 73%;,
+        height: 78%;
         // width: 1300px;
         // height: 905px;
         margin-top: -90px;
@@ -470,7 +491,8 @@ export default {
           position: absolute;
           z-index: 20;
           width: 100%;
-          top: 480px;
+          // top: 480px;
+          top: 520px;
           display: flex;
           justify-content: center;
         > a{
@@ -492,9 +514,9 @@ export default {
       }
     }
     .center{
-      height: 1650px;
+      height: 1550px;
       width: 100%;
-      margin-top: -280px;
+      margin-top: -320px;
       .botTop{
         width: 1200px;
         height: 150px;
@@ -511,24 +533,27 @@ export default {
         }
       }
       .centerAll{
-        width: 1200px;
-        height: 460px;
+        // width: 1200px;
+        // height: 460px;
+        width: 1000px;
+        height: 420px;
         padding: 0 0 0 40px;
         margin: 0 auto;
         border-radius: 30px;
         .centerTopLeft{
-          width: 450px;
+          // width: 450px;
+          // width: 410px;
+          width: 370px;
           height: 460px;
-          padding: 120px 0 116px;
+          // padding: 120px 0 116px;
+          padding: 100px 0 116px;
           margin: auto 0;
           .Conce{
-            width: 450px;
             font-size: 20px;
             font-family: 'Montserrat-Bold';
             color: #fff;
           }
           .CLMM{
-            width: 450px;
             margin-top: 40px;
             color: #959CAC;
             font-size: 18px;
@@ -558,12 +583,12 @@ export default {
     .edges{
       background-image: url('../../assets/img/cremaWebImg/edges.png');
       background-size: 100% 100%;
-      height: 680px;
+      height: 580px;
       width: 100%;
       margin-top: 150px;
       .botTop{
         width: 1200px;
-        height: 150px;
+        height: 90px;
         line-height: 150px;
         margin: 0 auto;
         color: #fff;
@@ -577,7 +602,7 @@ export default {
         }
       }
       .edgesAll{
-        width: 1200px;
+        width: 1000px;
         height: 500px;
         padding: 0 0 0 40px;
         margin: 0 auto;
@@ -663,8 +688,8 @@ export default {
           }
         }
         .edgesRight{
-          width: 600px;
-          height: 500px;
+          width: 550px;
+          height: 430px;
           background-image: url('../../assets/img/cremaWebImg/edgesFlyball.png');
           background-size: 100% 100%;
         }
@@ -684,12 +709,20 @@ export default {
       }
     }
     .Roadmap{
-      background-image: url('../../assets/img/cremaWebImg/cremaPres.png');
-      background-size: 100% 100%;
+      position: relative;
       width: 100%;
       height: 800px;
       margin: 0 auto;
-      margin-top: 120px;
+      margin-top: 30px;
+      > div:nth-child(1){
+        background-image: url('../../assets/img/cremaWebImg/cremaPres.png');
+        background-size: 100% 100%;
+        width: 1400px;
+        height: 600px;
+        position: absolute;
+        left: 0;
+        top: 120px;
+      }
       .botTop{
         width: 1200px;
         height: 150px;
@@ -713,7 +746,7 @@ export default {
         .botRo{
           > div{
             > div{
-              font-family: 'SansSerifFLF-Demibold';
+              font-family: 'Montserrat-Bold';
             }
           }
         }
@@ -726,12 +759,13 @@ export default {
             > span{
               font-size: 24px;
               color: #fff;
+              font-family: 'Montserrat-Bold';
             }
             div{
               margin-top: 20px;
               background-size: 100% 100%;
               width: 200px;
-              height: 110px;
+              height: 120px;
               color: #959cac;
               padding: 25px 30px;
               display: flex;
@@ -739,7 +773,8 @@ export default {
               cursor: pointer;
               span{
                 width: 100%;
-                font-size: 18px;
+                font-size: 16px;
+                font-family: 'Avenir';
               }
             }
           }
@@ -749,6 +784,7 @@ export default {
             width: 200px;
             height: 155px;
             div{
+              height: 150px;
               background-image: url('../../assets/img/cremaWebImg/novTop.png');
             }
             // div:hover{
@@ -779,6 +815,7 @@ export default {
             > span{
               font-size: 24px;
               color: #fff;
+              font-family: 'Montserrat-Bold';
             }
             div{
               margin-top: 20px;
@@ -790,7 +827,8 @@ export default {
               cursor: pointer;
               span{
                 width: 100%;
-                font-size: 18px;
+                font-size: 16px;
+                font-family: 'Avenir';
               }
             }
           }
@@ -826,14 +864,15 @@ export default {
       }
     }
     .bottom{
-      height: 970px;
+      // height: 970px;
+      height: 845px;
       margin-top: 60px;
       background: rgba(#343F49,.1);
       // background-image: url('../../assets/img/cremaWebImg/faqbgs.png');
       // background-size: 105% 100%;
       .botTop{
         width: 1200px;
-        height: 150px;
+        height: 130px;
         line-height: 150px;
         margin: 0 auto;
         color: #fff;
@@ -856,10 +895,10 @@ export default {
           height: 64px;
           margin: 0 auto;
           color: #fff;
-          font-size: 20px;
+          font-size: 16px;
           // line-height: 64px;
           margin-bottom: 2px;
-          padding: 16px 30px;
+          padding: 18px 30px;
           display: flex;
           justify-content: space-between;
           cursor: pointer;
@@ -877,11 +916,10 @@ export default {
         > div:nth-child(1):hover{
           background: #282F34;
         }
-        
         > div:nth-child(2){
           font-family: 'SansSerifFLF-Demibold';
           width: 800px;
-          height: 220px;
+          // height: 220px;
           background: #1E2328;
           padding: 20px 30px;
           span{
@@ -892,47 +930,43 @@ export default {
         }
       }
     }
+    .bottomBig{
+      height: 970px !important;
+    }
+  }
+  .mainBig{
+    height: 4860px !important;
   }
   .footer{
-    height: 180px;
+    height: 220px;
     width: 100%;
     background: #14191E;
     padding: 40px 0 40px 0;
     .footerAll{
       width: 1100px;
-      height: 100px;
+      height: 140px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
-      .footerLeft{
-        width: 280px;
-        height: 100px;
+      flex-wrap: wrap;
+      > div:nth-child(1){
+        width: 100%;
+        height: 26px;
         display: flex;
         flex-wrap: wrap;
         align-content: space-around;
+        justify-content: space-between;
         img{
           width: 110px;
           height: 26px;
         }
-        p{
-          font-size: 16px;
-          color: rgba(255,255,255,0.5);
-          font-family: 'Avenir';
-        }
-      }
-      .footerReight{
-        width: 355px;
-        height: 100px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: flex-end;
         .ReiImg{
           display: flex;
           justify-content: space-between;
-          width: 170px;
+          align-content: space-around;
+          width: 210px;
           height: 20px;
-          text-align: right;
+          margin-top: 3px;
           a{
             width: 20px;
             height: 20px;
@@ -963,24 +997,39 @@ export default {
             background-image: url('../../assets/img/cremaWebImg/icon_Discord.png');
           }
         }
-        p{
-          display: flex;
-          font-size: 16px;
-          color: rgba(255,255,255,0.5);
-          text-align: right;
-          font-family: 'Avenir';
-          a{
-            width: 20px;
-            height: 20px;
-            background-size: 100% 100%;
-            background-image: url('../../assets/img/cremaWebImg/icon_copy@2x.png');
+      }
+      > div:nth-child(2){
+        width: 100%;
+        height: 74px;
+        padding: 20px 0;
+        display: flex;
+        justify-content: flex-end;
+        border-bottom: 1px solid rgba(#fff,.1);
+        div{
+          width: 155px;
+          height: 40px;
+          p{
+            font-size: 16px;
+            font-family: 'Avenir';
+            text-align: right;
+            color: rgba(#fff,.8);
           }
-          a:hover{
-            background-image: url('../../assets/img/cremaWebImg/hoverwitch.png');
+          > p:nth-child(1){
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
           }
         }
-        .oneEmail{
-          margin-right: 20px;
+        > div:nth-child(1){
+          margin-right: 48px;
+        }
+      }
+      > div:nth-child(3){
+        width: 100%;
+        height: 16px;
+        p{
+          font-size: 14px;
+          color: rgba(255,255,255,0.5);
+          font-family: 'Avenir';
         }
       }
     }
@@ -1024,12 +1073,26 @@ export default {
       width: 90%;
     }
     .main{
-      height: 5110px;
+      height: 4615px;
       // display: none;
       .Roadmap{
-        width: 100%;
+        width: 1280px;
+        // width: 100%;
         height: 710px;
         background-image: url('../../assets/img/cremaWebImg/cremaPre.png');
+        background-size: 100% 100%;
+        > div:nth-child(1){
+          display: none;
+        }
+      }
+      .top{
+        width: 1280px;
+        > div:nth-child(1){
+          height: 777px;
+        }
+        > div:nth-child(2){
+          top: 490px;
+        }
       }
       // .top{
       //   width: 900px;
@@ -1107,11 +1170,9 @@ export default {
       //   }
       // }
     }
-    // .footer{
-    //   .footerAll{
-    //     width: 90%;
-    //   }
-    // }
+    .mainBig{
+      height: 4785px !important;
+    }
   }
 }
 @media screen and (max-width: 750px) {
@@ -1140,18 +1201,19 @@ export default {
       }
     }
     .main{
-      height: 4660px;
+      height: 4395px;
       .top{
         width: 100%;
-        height: 410px;
+        // width: 100%;
+        height: 370px;
          > div:nth-child(1){
           background-image: url('../../assets/img/cremaWebImg/h5HeaderBall.png');
           width: 100%;
-          height: 530px;
+          height: 510px;
           margin-top: -70px;
         }
         > div:nth-child(2){
-            top: 285px;
+            top: 290px;
           > a{
             padding: 20px 0 0 48px;
           }
@@ -1173,7 +1235,7 @@ export default {
           }
         }
         .centerAll{
-          width: 340px;
+          width: 330px;
           height: 390px;
           padding: 0;
           .centerTopLeft{
@@ -1187,7 +1249,7 @@ export default {
             .CLMM{
               width: 100%;
               font-size: 14px;
-              line-height: 26px;
+              line-height: 22px;
               margin-top: 16px;
             }
           }
@@ -1208,6 +1270,8 @@ export default {
       .edges{
         margin-top: 110px;
         width: 100%;
+        // width: 360px;
+        margin: 110px auto 0;
         height: 536px;
         background-image: url('../../assets/img/cremaWebImg/h5edges.png');
         position: relative;
@@ -1263,6 +1327,7 @@ export default {
       .Roadmap{
         background-image: url('../../assets/img/cremaWebImg/tuoscr.png');
         width: 100%;
+        // width: 360px;
         margin-top: 80px;
         height: 1150px;
         .botTop{
@@ -1289,6 +1354,7 @@ export default {
               margin-left: 20px;
               div{
                 width: 250px;
+                height: 135px;
                 background-image: url('../../assets/img/cremaWebImg/hgeneral.png');
               } 
               left: 70px;
@@ -1299,7 +1365,7 @@ export default {
                 background-image: url('../../assets/img/cremaWebImg/hThreegeneral.png');
               }
               left: 70px;
-              top: 435px;
+              top: 425px;
             }
           }
           .botRo{
@@ -1326,13 +1392,13 @@ export default {
                 background-image: url('../../assets/img/cremaWebImg/hFourgeneral.png');
               }
               left: 70px;
-              top: -180px;
+              top: -205px;
             }
           }
         }
       }
       .bottom{
-        height: 915px;
+        height: 688px;
         width: 100%;
         padding-top: 1px;
         .botTop{
@@ -1363,7 +1429,7 @@ export default {
             }
           }
           > div:nth-child(2){
-            height: 220px;
+            // height: 220px;
             width: 100%;
             padding: 5px 20px;
             span{
@@ -1374,6 +1440,12 @@ export default {
         }
         
       }
+      .bottomBig{
+        height: 915px !important;
+      }
+    }
+    .mainBig{
+      height: 4620px !important;
     }
     .footer{
       width: 100%;
@@ -1384,9 +1456,32 @@ export default {
       .footerAll{
         width: 100%;
         height: 200px;
-        flex-wrap: wrap;
-        position: relative;
-        padding-top: 10px;
+        > div:nth-child(1){
+          justify-content: center;
+          margin: 0 auto;
+          height: 100px;
+          width: 60%;
+        }
+        > div:nth-child(2){
+          height: 52px;
+          padding: 0 10px;
+          justify-content: space-between;
+          > div:nth-child(1){
+            margin-right: 0;
+          }
+          div{
+            width: 180px;
+             p{
+              text-align: center;
+            }
+          }
+        }
+        > div:nth-child(3){
+          // display: none;
+          p{
+            text-align: center;
+          }
+        }
         .footerLeft{
           margin: 0 auto;
           height: 210px;
@@ -1398,10 +1493,10 @@ export default {
           }
         }
         .footerReight{
-          width: 180px;
+          width: 100%;
           position: absolute;
           height: 66px;
-          left: 106px;
+          // left: 106px;
           top: 65px;
           margin: 0 auto;
           justify-content: center;
@@ -1413,7 +1508,7 @@ export default {
             margin: 12px auto 0;
           }
           .oneEmail{
-            margin-right: 0px;
+            margin: 0;
             margin-top: 22px;
           }
         }
