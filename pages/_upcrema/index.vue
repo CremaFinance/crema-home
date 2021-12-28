@@ -1,77 +1,110 @@
 <template>
   <div class="outer">
     <!-- 头部导航栏区域 -->
-    <div class="header">
-      <div class="navLeft">
-        <img src="../../assets/img/cremaWebImg/headerLogo.png">
-      </div>
-      <div class="navReight">
-        <a href="https://beta.crema.finance/" target="_blank">Beta APP</a>
-        <div>
-          <a href="https://twitter.com/Crema_Finance" target="_blank"></a>
-          <a href="https://t.me/cremafinance" target="_blank"></a>
-          <a href="https://medium.com/@Crema.finance" target="_blank"></a>
-          <a href="https://discord.gg/hCaFmvvPYH" target="_blank"></a>
+    <div class="headerAll">
+      <div class="header">
+        <div class="navLeft">
+          <img src="../../assets/img/cremaWebImg/headerLogo.png">
+        </div>
+        <div class="navReight">
+          <div>
+            <a href="https://twitter.com/Crema_Finance" target="_blank"></a>
+            <a href="https://t.me/cremafinance" target="_blank"></a>
+            <a href="https://medium.com/@Crema.finance" target="_blank"></a>
+            <a href="https://discord.gg/hCaFmvvPYH" target="_blank"></a>
+          </div>
+          <div class="center"></div>
+          <a href="https://beta.crema.finance/" target="_blank">Access App</a>
         </div>
       </div>
     </div>
     <!-- 主体区域 -->
     <div class="main" :class="faqVal ? 'mainBig':''">
       <div class="top">
-        <!-- <img src="../../assets/img/cremaWebImg/cremaHeader.png" alt=""> -->
-          <div></div>
-          <div><a href="https://beta.crema.finance/" target="_blank">Beta APP</a></div>
+          <div>
+            <div class="headerTop">
+              <div></div>
+            </div>
+            <div class="topText">
+              <p>A Powerful Concentrated Liquidity Protocol</p>
+              <div>Swap, earn and build with Crema's programmable liquidity network and unleash the full potential of your assets.</div>
+            </div>
+            <div class="boootmB">
+              <a href="https://beta.crema.finance/" target="_blank"><span>Beta APP</span></a>
+              <a href="https://gitbook.crema.finance/" target="_blank"><span>Docs</span></a>
+            </div>
+          </div>
+          <div>
+            <video class="webMp" muted playsinline loop autoplay data-wf-ignore="true" data-object-fit="cover">
+              <source src="../../assets/img/cremaWebImg/covercc.mp4" type="video/mp4">
+            </video>
+            <video class="hfiveMp" preload="none" muted playsinline loop autoplay data-wf-ignore="true" data-object-fit="cover">
+              <source src="../../assets/img/cremaWebImg/cremanewH5.mp4" type="video/mp4">
+            </video>
+          </div>
+      </div>
+      <div class="products"  :class="productsDetail ? 'productsNew':''">
+        <div>
+          <div class="botTop">
+            <span>Our Products</span>
+          </div>
+          <div class="botCenter" :class="productsDetail ? 'fivenew':''">
+            <p @click="changeP('a')" :class="changeVal == 'a'? 'changeClass':''">Concentrated Liquidity</p>
+            <p @click="changeP('b')" :class="changeVal == 'b'? 'changeClass':''">NFT Liquidity Farming</p>
+            <p @click="changeP('c')" :class="changeVal == 'c'? 'changeClass':''">Smart Aggregator</p>
+            <p @click="changeP('d')" :class="changeVal == 'd'? 'changeClass':''">Cross-Chain Solutions</p>
+            <div>
+                <span @click="changehFive()" :class="changeVal == 'a' ? 'changepas' : ''">Concentrated Liquidity</span>
+                <span @click="changeP('b')" v-if="productsDetail"  :class="changeVal == 'b' ? 'changepas' : ''">NFT Liquidity Farming</span>
+                <span @click="changeP('c')" v-if="productsDetail"  :class="changeVal == 'c' ? 'changepas' : ''">Smart Aggregator</span>
+                <span @click="changeP('d')" v-if="productsDetail"  :class="changeVal == 'd' ? 'changepas' : ''">Cross-Chain Solutions</span>
+                <div @click="changehFive()" :class="productsDetail ? 'changeFive' : ''"></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <p>{{ changeValDetail.top }}</p>
+              <p>{{ changeValDetail.bottom }}</p>
+            </div>
+            <div :class="changeVal == 'a'? 'classA' : changeVal == 'b'? 'classB' : changeVal == 'c'? 'classC' : 'classD'"></div>
+          </div>
+        </div>
+        <div></div>
+        <div></div>
       </div>
       <div class="center">
-        <div class="botTop">
-          <span>Core Products</span>
-          <!-- <img src="../../assets/img/cremaWebImg/cremaTitlea.png" alt=""> -->
-        </div>
-        <div class="centerTop centerAll">
-          <div class="centerTopLeft">
-            <div class="Conce">Concentrated Liquidity Market Maker</div>
-            <div class="CLMM">CLMM allows liquidity providers to set specific price ranges and add single-sided liquidity. It will redefine the capital efficiency and trading depth on Solana.</div>
-          </div>
-        </div>
-        <div class="centerMain centerAll">
-          <div class="centerTopLeft">
-            <div class="Conce">LP NFT Farming</div>
-            <div class="CLMM">A special gift from Crema. The non-fungible liquidity contributed by liquidity providers are eligible to earn extra rewards from Crema's LP NFT Farming. </div>
-          </div>
-        </div>
-        <div class="centerBottom centerAll">
-          <div class="centerTopLeft">
-            <div class="Conce">Integrated Aggregators</div>
-            <div class="CLMM">Crema is mutually integrated with influential aggregators on Solana such as Jupiter, which helps all users to easily access the full liquidity within the ecosystem. </div>
-          </div>
-        </div>
-      </div>
-      <div class="edges" @mouseover="changeOff()" @mouseleave="changeGo()">
         <div class="botTop">
           <span>Our Edges</span>
           <!-- <img src="../../assets/img/cremaWebImg/cremaTitlea.png" alt=""> -->
         </div>
-         <div class="edgesAll">
-          <div class="edgesLeft">
-            <div class="Conce">{{this.num==1 ? this.changeone.top : this.num==2 ? this.changetwo.top : this.num==3 ? this.changethree.top : this.changefour.top}}</div>
-            <div class="CLMM">{{this.num==1 ? this.changeone.bto : this.num==2 ? this.changetwo.bto : this.num==3 ? this.changethree.bto : this.changefour.bto}}</div>
-            <div class="edgesBtn">
-              <div :class="this.num == 1 ? 'btnSize':''" @click="cutEle(1)"></div>
-              <div :class="this.num == 2 ? 'btnSize':''" @click="cutEle(2)"></div>
-              <div :class="this.num == 3 ? 'btnSize':''" @click="cutEle(3)"></div>
-              <div :class="this.num == 4 ? 'btnSize':''" @click="cutEle(4)"></div>
-            </div>
+        <div class="centerTop centerAll">
+          <div class="centerTopLeft">
+            <p>For Traders</p>
+            <div class="Conce">Embrace the higher market depth and lower price slippage</div>
+            <div class="CLMM">The price impact of user orders is much less on CLMM pools because there is more liquidity concentrated around the current price.</div>
           </div>
-          <div class="edgesRight" 
-              :class="num == 1 ? 'eone' :
-              num == 2 ? 'etwo' : 
-              num == 3 ? 'ethree' : 'efour'"></div>
+          <div></div>
+        </div>
+        <div class="centerMain centerAll">
+          <div class="centerTopLeft">
+            <p>For Liquidity Providers</p>
+            <div class="Conce">Maximize the utilization of their capital </div>
+            <div class="CLMM">LPs can earn transaction fees more efficiently by specifying a narrow and reasonable price range. Extra incentives will also be distributed through NFT liquidity farming.</div>
+          </div>
+          <div></div>
+        </div>
+        <div class="centerBottom centerAll">
+          <div class="centerTopLeft">
+            <p>For Developers</p>
+            <div class="Conce">Integrate Crema's service with no barriers</div>
+            <div class="CLMM">Crema will be a core building block of the Defi 2.0 infrastructure on Solana. Any Solana-based application can easily call or integrate Crema's service with its ready-to-use SDK.</div>
+          </div>
+          <div></div>
         </div>
       </div>
       <div class="Roadmap">
         <div class="botTop">
           <span>Roadmap</span>
-          <!-- <img src="../../assets/img/cremaWebImg/cremaTitlea.png" alt=""> -->
         </div>
          <div class="RoadmapAll">
            <div>
@@ -89,13 +122,15 @@
                <p v-for="item in janForm" v-if="isJan">{{item.val}}</p>
              </div>
              <div>
-               <!-- <span>CLMM V2</span> -->
-               <div>
+                <div>
+                  <span>DAO Platform Started</span>
+                  <div @click="changemar" :class="ismar ? 'jancla':''"></div>
+                </div>
+                <p style="width:190px;" v-for="item in marForm" v-if="ismar">{{item.val}}</p>
+                <div>
                   <span>CLMM V2</span>
-                  <div @click="changeq" :class="isq ? 'jancla':''"></div>
-               </div>
-               <p style="width:190px;" v-for="item in qForm" v-if="isq">{{item.val}}</p>
-               <span>Cross Chain Swap</span>
+                </div>
+                <span>Internal Oracle</span>
              </div>
            </div>
            <div>
@@ -112,13 +147,11 @@
            </div>
            <div>
              <div>
-               <!-- <span>Mainnet Beta Release</span> -->
                <div>
                   <span>Mainnet Beta Release</span>
                   <div @click="changedec" :class="isdec ? 'jancla':''"></div>
                </div>
                <p style="width:190px;" v-for="item in decForm" v-if="isdec">{{item.val}}</p>
-               <!-- <span>Integrate with Aggregators</span> -->
                <div>
                   <span>Integrate with Aggregators</span>
                   <div @click="changeint" :class="isint ? 'jancla':''"></div>
@@ -126,23 +159,102 @@
                <p v-for="item in intForm" v-if="isint">{{item.val}}</p>
              </div>
              <div>
-               <!-- <span>DAO Platform Started</span> -->
-               <div>
-                  <span>DAO Platform Started</span>
-                  <div @click="changemar" :class="ismar ? 'jancla':''"></div>
-               </div>
-               <p style="width:190px;" v-for="item in marForm" v-if="ismar">{{item.val}}</p>
-               <span>Liquidity Migration</span>
-               <span>Liquidity Bridge</span>
+              <span>Multichain Versions</span>
+              <span>Cross-Chain Swap</span>
+              <span>Liquidity Migration</span>
              </div>
            </div>
         </div>
-        <div></div>
+        <div class="RoadmapAllH">
+          <div>
+            <div>
+              <div></div>
+              <div></div>
+            </div>
+            <div>
+              <div>2021 Nov</div>
+              <div>
+                <p>Project Started</p>
+                <p>R&D Started</p>
+                <p>Devnet Beta Release</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div></div>
+              <div></div>
+            </div>
+            <div>
+              <div>2021 Dec</div>
+              <div>
+                <div>
+                  <p>Mainnet Beta Release</p>
+                  <div @click="changedec" :class="isdec ? 'jancla':''"></div>
+                </div>
+                <span v-for="item in decForm" v-if="isdec">{{item.val}}</span>
+                <div>
+                    <p>Integrate with Aggregators</p>
+                    <div @click="changeint" :class="isint ? 'jancla':''"></div>
+                </div>
+                <span v-for="item in intForm" v-if="isint">{{item.val}}</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div></div>
+              <div></div>
+            </div>
+            <div>
+              <div>2022 Jan</div>
+              <div>
+                <p>TGE & IDO Event</p>
+                <div>
+                    <p>MVP Release</p>
+                    <div @click="changeJan" :class="isJan ? 'jancla':''"></div>
+                </div>
+                <span v-for="item in janForm" v-if="isJan">{{item.val}}</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div></div>
+              <div></div>
+            </div>
+            <div>
+              <div>2022 Feb-Mar</div>
+              <div>
+                <p>Multichain Versions</p>
+                <p>Cross-Chain Swap</p>
+                <p>Liquidity Migration</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div></div>
+              <div></div>
+            </div>
+            <div>
+              <div>2022 Q2</div>
+              <div>
+                <div>
+                    <p>DAO Platform Started</p>
+                    <div @click="changemar" :class="ismar ? 'jancla':''"></div>
+                </div>
+                <span v-for="item in marForm" v-if="ismar">{{item.val}}</span>
+                <p>CLMM V2</p>
+                <p>Internal Oracle</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="bottom" :class="faqVal ? 'bottomBig':''">
         <div class="botTop">
           <span>FAQ</span>
-          <!-- <img src="../../assets/img/cremaWebImg/cremaTitlea.png" alt=""> -->
         </div>
         <div class="botBto" v-for="item in faqForm"  @click="faqText(item)">
           <div>
@@ -154,6 +266,7 @@
           </div>
         </div>
       </div>
+      <div class="footerBot"></div>
     </div>
     <!-- 底部区域 -->
     <div class="footer">
@@ -169,14 +282,12 @@
         </div>
         <div>
           <div>
-            <p>Cooperate & Invest</p>
+            <p>Business Cooperation</p>
             <p>bd@crema.finance</p>
-            <!-- <a href="##" ref="copya" @click="copy('a')"></a> -->
           </div>
           <div>
             <p>General Inquiries</p>
             <p>hello@crema.finance</p>
-            <!-- <a href="##" ref="copy" @click="copy('b')"></a> -->
           </div>
         </div>
         <div>
@@ -195,7 +306,6 @@ export default {
       androidItem: "",
       isShow: false,
       showActive: 1,
-      screenWidth: '',
       screenHeight: '',
       localeList: [
         {
@@ -253,7 +363,7 @@ export default {
           val:'NFT Liquidity Farming'
         },
         {
-          val:'LAAS (Liquidity as as Service)'
+          val:'LAAS (Liquidity as a Service)'
         }
       ],
       isq:false,
@@ -300,25 +410,16 @@ export default {
       ],
 
       num:1,
-      changeone:{
-        top:'Unparalleled Capital Efficiency',
-        bto:'CLMM delivers 10-50x higher capital efficiency than the common AMM model does on Solana. '
-      },
-      changetwo:{ 
-        top:'Aggregated by Powerful Ones',
-        bto:'Crema has reached strategic partnerships with influential players on the stage such as Jupiter, Mercurial, etc., and the exploration will never stop.'
-      },
-      changethree:{
-        top:'Multiple Incentives',
-        bto:'Powered by the better fee earning  capability and LP NFT farming, Crema gives best incentives to liquidity providers.'
-      },
-      changefour:{
-        top:'A Core DeFi Building Block',
-        bto:"Crema's liquidity protocol is fully integratable to different Dapps, which is your key to the DeFi 2.0 on Solana."
-      },
       // locale: "简体中文",
       timer: '',
-      value: 0
+      value: 0,
+      // 监视数据
+      changeVal:'',
+      changeValDetail:{
+        top:'',
+        bottom:'',
+      },
+      productsDetail:false,
     };
   },
   computed: {
@@ -339,22 +440,34 @@ export default {
       return "xx.xx.xx";
     },
   },
-  mounted() {
-    // 定时器开启
-    this.timer = setInterval(this.get, 5000);
-    this.screenWidth = document.body.clientWidth;
-    this.screenHeight = document.body.clientHeight;
-    window.onresize = () => {
-      return (() => {
-        this.screenWidth = document.body.clientWidth;
-        this.screenHeight = document.body.clientHeight;
-      })();
-    };
-  },
-  beforeDestroy() {
-    clearInterval(this.timer);
-  },
+  mounted() {this.changeP('a');},
   methods: {
+    changehFive(){
+      this.faqVal = '';
+      this.productsDetail = !this.productsDetail;
+      this.changeP('a');
+    },
+    changeP(val){
+      this.changeVal = val;
+      // this.productsDetail = false;
+      if(val=='a'){
+        this.changeValDetail.top = 'Concentrated Liquidity Market Maker',
+        this.changeValDetail.bottom = 'CLMM allows liquidity providers to set specific price ranges, add single-sided liquidity and do range order trading. It redefines the capital efficiency and trading depth on Solana.'
+      }
+      if(val=='b'){
+        this.changeValDetail.top = 'NFT Liquidity Farming',
+        this.changeValDetail.bottom = "A special gift from Crema. The non-fungible liquidity contributed by liquidity providers are eligible to earn extra rewards from Crema's NFT Liquidity Farming pools."
+      }
+      if(val=='c'){
+        this.changeValDetail.top = 'Smart Aggregator',
+        this.changeValDetail.bottom = "Externally integrated by Jupiter, the powerful aggregator on Solana, internally equipped with Crema's own routing system, Crema always delivers the best price in the ecosystem to its users. "
+      }
+      if(val=='d'){
+        this.changeValDetail.top = 'Cross-Chain Solutions',
+        this.changeValDetail.bottom = "Powered by CLMM pools and the internal routing system, Crema can be a liquidity bridge for any cross-chain platforms. With dedicated smart contracts deployed on multiple blockchains, cross-chain swap has never been easier."
+      }
+
+    },
     changeJan(){
       this.isJan = !this.isJan;
     },
@@ -370,61 +483,13 @@ export default {
     changeint(){
       this.isint = !this.isint;
     },
-    
-    // 当鼠标移入时关闭定时器
-    changeOff(){
-      clearInterval(this.timer);
-    },
-    // 当鼠标移出时开启定时器
-    changeGo(){
-      this.timer = setInterval(this.get, 5000);
-    },
-    get() {
-      this.num ++;
-      if(this.num == 5){
-        this.num = 1;
-      }
-    },
-    cutEle(val){
-      if(val == 1){
-        this.num = 1;
-      }
-      if(val == 2){
-        this.num = 2;
-      }
-      if(val == 3){
-        this.num = 3;
-      }
-      if(val == 4){
-        this.num = 4;
-      }
-    },
     faqText(e){
+      this.productsDetail = false;
       if(this.faqVal && this.faqVal == e.child){
         this.faqVal = '';
         return;
       }
       this.faqVal = e.child;
-    },
-    copy(e){
-      if(e == 'a'){
-        let text = this.$refs.copya.previousSibling.previousSibling;
-        const selection = window.getSelection();
-        if(selection.rangeCount > 0) selection.removeAllRanges();
-        const range = document.createRange();
-        range.selectNodeContents(text);
-        selection.addRange(range);
-        document.execCommand("copy");
-      }else{
-        let text = this.$refs.copy.previousSibling.previousSibling;
-        const selection = window.getSelection();
-        if(selection.rangeCount > 0) selection.removeAllRanges();
-        const range = document.createRange();
-        range.selectNodeContents(text);
-        selection.addRange(range);
-        document.execCommand("copy");
-      }
-      
     },
     mouseOver() {
       this.openList();
@@ -440,20 +505,6 @@ export default {
     },
     toggle() {
       this.isShow = !this.isShow;
-    },
-    switchLanguage(lang, index) {
-      this.showActive = index;
-      setCookie("lang", lang);
-      // console.log('this.$route####', this.$route);
-      this.$store.dispatch("setLanguage", lang);
-      this.$i18n.locale = lang;
-    },
-    goUrl(type) {
-      if (type == "android") {
-        window.location.href = this.androidItem.url;
-
-        // "https://archive.kkwallet.org/upload/package/1617767590768594342.apk";
-      }
     },
     isAndroidOrIOS() {
       if (process.client) {
@@ -476,176 +527,330 @@ export default {
       }
     },
   },
-  watch:{
-    screenWidth(){
-      if(this.screenWidth<=750){
-        this.isJan = true;
-        this.isq = true;
-        this.isdec = true;
-        this.ismar = true;
-        this.isint = true;
-      }
-      if(this.screenWidth>750){
-        this.isJan = false;
-        this.isq = false;
-        this.isdec = false;
-        this.ismar = false;
-        this.isint = false;
-      }
-    }
-  }
+  watch:{}
 };
 </script>
 <style lang="scss" scoped>
-
 .outer {
   width: 100%;
   height: 100%;
-  background: #14191E;
+  background: #13191f;
   position: relative;
-  font-family: 'SansSerifExbFLF';
-  .header {
-    width: 1000px;
-    height: 115px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    position: relative;
-    z-index: 100;
-    .navLeft{
-      width: 180px;
-      height: 43px;
-      img{
-        // width: 180px;
-        // height: 43px;
-        width: 160px;
-        height: 36px;
-      }
-    }
-    .navReight{
-      height: 46px;
-      width: 338px;
+  font-family: 'Helvetica-NeueBd';
+  .headerAll{
+    width: 100%;
+    background: #000;
+    .header {
+      width: 1000px;
+      height: 80px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      > a{
-        display: block;
-        width: 138px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 100;
+      .navLeft{
+        width: 180px;
+        height: 43px;
+        img{
+          width: 160px;
+          height: 36px;
+        }
+      }
+      .navReight{
         height: 46px;
-        background-image: url('../../assets/img/cremaWebImg/buttonHeadc.png');
-        background-size: 100% 100%;
-        cursor: pointer;
-        font-size: 12px;
-        padding: 16px 40px;
-        color: #fff;
-        font-family: 'Montserrat-Bold';
-      }
-      > a:hover{
-        background-image: url('../../assets/img/cremaWebImg/HoverbuttonHeadc.png');
-      }
-      > div{
-        width: 170px;
-        height: 20px;
+        width: 370px;
         display: flex;
         justify-content: space-between;
-        a{
+        align-items: center;
+        > a{
           display: block;
-          width: 20px;
-          height: 20px;
+          width: 138px;
+          height: 46px;
+          background-image: url('../../assets/img/cremaWebImg/buttonHeadca.png');
           background-size: 100% 100%;
+          cursor: pointer;
+          font-size: 12px;
+          padding: 15px 32px;
+          color: #fff;
+          font-family: 'Helvetica-NeueBd';
         }
-        > a:nth-child(1){
-          background-image: url('../../assets/img/cremaWebImg/icon_twitter@2x.png');
+        > a:hover{
+          background-image: url('../../assets/img/cremaWebImg/HoverbuttonHeadc.png');
         }
-        > a:nth-child(1):hover{
-          background-image: url('../../assets/img/cremaWebImg/icon_twitter.png');
+        .center{
+          width: 1px;
+          height: 24px;
+          border-right: 1px solid #808080;
         }
-        > a:nth-child(2){
-          background-image: url('../../assets/img/cremaWebImg/icon_TelegramGroup@2x.png');
-        }
-        > a:nth-child(2):hover{
-          background-image: url('../../assets/img/cremaWebImg/icon_TelegramGroup.png');
-        }
-        > a:nth-child(3){
-          background-image: url('../../assets/img/cremaWebImg/icon_Medium@2x.png');
-        }
-        > a:nth-child(3):hover{
-          background-image: url('../../assets/img/cremaWebImg/icon_Medium.png');
-        }
-        > a:nth-child(4){
-          background-image: url('../../assets/img/cremaWebImg/icon_Discord@2x.png');
-        }
-        > a:nth-child(4):hover{
-          background-image: url('../../assets/img/cremaWebImg/icon_Discord.png');
+        > div{
+          width: 170px;
+          height: 20px;
+          display: flex;
+          justify-content: space-between;
+          a{
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-size: 100% 100%;
+          }
+          > a:nth-child(1){
+            background-image: url('../../assets/img/cremaWebImg/icon_twitter@2x.png');
+          }
+          > a:nth-child(1):hover{
+            background-image: url('../../assets/img/cremaWebImg/icon_twitter.png');
+          }
+          > a:nth-child(2){
+            background-image: url('../../assets/img/cremaWebImg/icon_TelegramGroup@2x.png');
+          }
+          > a:nth-child(2):hover{
+            background-image: url('../../assets/img/cremaWebImg/icon_TelegramGroup.png');
+          }
+          > a:nth-child(3){
+            background-image: url('../../assets/img/cremaWebImg/icon_Medium@2x.png');
+          }
+          > a:nth-child(3):hover{
+            background-image: url('../../assets/img/cremaWebImg/icon_Medium.png');
+          }
+          > a:nth-child(4){
+            background-image: url('../../assets/img/cremaWebImg/icon_Discord@2x.png');
+          }
+          > a:nth-child(4):hover{
+            background-image: url('../../assets/img/cremaWebImg/icon_Discord.png');
+          }
         }
       }
     }
   }
   .main{
     width: 100%;
-    // height: 5205px;
-    height: 4750px;
-    padding: 10px 0 0 0;
-    font-family: 'SansSerifExbFLF';
+    position: relative;
+    overflow: hidden;
+    object-fit: cover;
     .top{
-      height: 1050px;
+      height: 580px;
       width: 100%;
       display: flex;
       justify-content: center;
       margin: 0 auto;
       position: relative;
+      flex-wrap: wrap;
       > div:nth-child(1){
-        // background-image: url('../../assets/img/cremaWebImg/cremaHeader.png');
-        background-image: url('../../assets/img/cremaWebImg/newHeader.png');
-        // background-image: url('../../assets/img/cremaWebImg/cremaImgheader.png');
-        background-size: 100% 100%;
-        width: 1400px;
-        // height: 73%;,
-        height: 78%;
-        // width: 1300px;
-        // height: 905px;
-        margin-top: -90px;
-        z-index: 1;
+        width: 1000px;
+        height: 600px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 20;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        .headerTop{
+          height: 36px;
+          > div{
+            width: 206px;
+            height: 36px;
+            background-image: url('../../assets/img/cremaWebImg/changecvr.png');
+            background-size: 100% 100%;
+          }
+        }
+        .topText{
+          width: 100%;
+          height: 210px;
+          padding: 20px 0 20px 0;
+          color:#fff;
+          display: flex;
+          flex-wrap: wrap;
+          font-family: 'Helvetica-NeueBd';
+          align-content: space-between;
+          p{
+            width: 500px;
+            font-size: 36px;
+            line-height: 48px;
+          }
+          div{
+            font-size: 18px;
+            width: 55%;
+            line-height: 30px;
+            color: #ddd;
+            font-family: 'Helvetica-NeueBd';
+          }
+        }
+        .boootmB{
+          height: 90px;
+          display: flex;
+          margin-top: 30px;
+          > a{
+            display: block;
+            font-family: 'Helvetica-NeueBd';
+            background-size: 100% 100%;
+            font-size: 20px;
+            color: #fff;
+            padding: 8px 0;
+            display: flex;
+            justify-content: center;
+            width: 165px;
+            height: 42px;
+          }
+          > a:nth-child(1){
+            background-image: url('../../assets/img/cremaWebImg/buttonHeadf.png');
+          }
+          > a:nth-child(1):hover{
+            background-image: url('../../assets/img/cremaWebImg/buttonHeadg.png');
+          }
+          > a:nth-child(2){
+            margin-left: 20px;
+            background-image: url('../../assets/img/cremaWebImg/webimgs.png');
+          }
+          > a:nth-child(2):hover{
+            background-image: url('../../assets/img/cremaWebImg/webhover.png');
+          }
+        }
       }
       > div:nth-child(2){
+        width: 100%;
+        position: absolute;
+        background: #000;
+        height: 560px;
+
+        // video{
+        //   margin: auto;
+        //   min-width: 100%;
+        //   min-height: 100%;
+        //   height: auto;
+        //   width: auto;
+        //   z-index: 2;
+        // }
+        video{
           position: absolute;
-          z-index: 20;
+          left: 8%;
+          top: 30px;
           width: 100%;
-          // top: 480px;
-          top: 520px;
-          display: flex;
-          justify-content: center;
-        > a{
-          // position: absolute;
-          // z-index: 20;
-          // left: 445px;
-          font-family: 'Montserrat-Bold';
-          width: 210px;
-          height: 70px;
-          background-image: url('../../assets/img/cremaWebImg/buttonHeadc.png');
-          background-size: 100% 100%;
-          font-size: 24px;
-          color: #fff;
-          padding: 20px 48px;
+          height: 480px;
+          z-index: 2;
         }
-        > a:hover{
-          background-image: url('../../assets/img/cremaWebImg/HoverbuttonHeadc.png');
+        .hfiveMp{
+          display: none;
         }
       }
     }
-    .center{
-      height: 1550px;
+    .products{
       width: 100%;
-      margin-top: -320px;
+      height: 650px;
+      margin-top: 30px;
+      color: #fff;
+      position: relative;
+      > div:nth-child(1){
+        width: 1000px;
+        height: 100%;
+        margin: 0 auto;
+        .botTop{
+          height: 90px;
+          line-height: 55px;
+          margin: 0 auto;
+          color: #fff;
+          font-size: 32px;
+          display: flex;
+          justify-content: center;
+          font-family: 'Helvetica-NeueBd';
+        }
+        .botCenter{
+          width: 100%;
+          height: 80px;
+          background: rgba(#fff,.1);
+          border-radius: 40px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          position: relative;
+          z-index: 20;
+          p{
+            font-size: 14px;
+            color: rgba(#fff,.7);
+            padding: 0 15px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            font-family: 'Helvetica-Black';
+          }
+          .changeClass{
+            background: linear-gradient(270deg, #5FE6D0 0%, #60B2F1 33%, #9380FF 68%, #E590FF 100%);
+            border-radius: 20px;
+            color: #fff !important;
+          }
+          > div{
+            display: none;
+          }
+        }
+        > div:nth-child(3){
+          margin-top: 60px;
+          width: 100%;
+          height: 380px;
+          display: flex;
+          justify-content: space-between;
+          > div:nth-child(1){
+            width: 480px;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 110px 0;
+            p{
+              font-size: 24px;
+              line-height: 28px;
+            }
+            > p:nth-child(2){
+              font-size: 16px;
+              font-family: 'Helvetica-NeueLt';
+              color: rgba(#fff,.7);
+            }
+          }
+          > div:nth-child(2){
+            width: 450px;
+            height: 100%;
+            background-size: 100% 100%;
+          }
+          .classA{
+            background-image: url('../../assets/img/cremaWebImg/edgesFlyball.png');
+          }
+          .classB{
+            background-image: url('../../assets/img/cremaWebImg/edgesFlyballThree.png');
+          }
+          .classC{
+            background-image: url('../../assets/img/cremaWebImg/edgesFlyballTwo.png');
+          }
+          .classD{
+            background-image: url('../../assets/img/cremaWebImg/edgesFlyballFouryna.png');
+          }
+        }
+      }
+      > div:nth-child(2),
+      > div:nth-child(3){
+        position: absolute;
+        width: 475px;
+        height: 100%;
+        background-size: 100% 100%;
+        top: 0;
+      }
+      > div:nth-child(2){
+        background-image: url('../../assets/img/cremaWebImg/productsLeft.png');
+        left: 0;
+      }
+      > div:nth-child(3){
+        background-image: url('../../assets/img/cremaWebImg/productsRight.png');
+        right: 0;
+      }
+    }
+    .center{
+      height: 1450px;
+      width: 100%;
       .botTop{
-        width: 1200px;
+        width: 1000px;
         height: 150px;
         line-height: 150px;
         margin: 0 auto;
         color: #fff;
-        font-size: 28px;
-        font-family: 'SansSerifExbFLF';
+        font-size: 32px;
+        font-family: 'Helvetica-NeueBd';
         display: flex;
         justify-content: center;
         img{
@@ -654,201 +859,103 @@ export default {
         }
       }
       .centerAll{
-        // width: 1200px;
-        // height: 460px;
         width: 1000px;
-        height: 420px;
-        padding: 0 0 0 40px;
+        height: 380px;
+        padding: 0 0 0 80px;
         margin: 0 auto;
         border-radius: 30px;
+        display: flex;
+        justify-content: space-between;
+        background: #1F2328;
+        border-radius: 20px;
         .centerTopLeft{
-          // width: 450px;
-          // width: 410px;
           width: 370px;
-          height: 460px;
-          // padding: 120px 0 116px;
-          padding: 100px 0 116px;
+          height: 380px;
+          padding: 55px 0;
           margin: auto 0;
+          p{
+            height: 36px;
+            font-style: 16px;
+            font-family: 'Arial';
+            margin-bottom: 20px;
+            text-align: center;
+            border-radius: 18px;
+            line-height: 36px;
+          }
           .Conce{
-            font-size: 20px;
-            font-family: 'Montserrat-Bold';
+            font-size: 24px;
+            line-height: 30px;
             color: #fff;
           }
           .CLMM{
+            width: 322px;
             margin-top: 40px;
-            color: #959CAC;
-            font-size: 18px;
-            line-height: 36px;
-            font-family: 'Avenir';
+            color: rgba(#fff,.7);
+            font-size: 16px;
+            line-height: 28px;
+            font-family: 'Helvetica-NeueLt';
           }
+        }
+        > div:nth-child(2){
+          width: 480px;
+          height: 100%;
+          background-size: 100% 100%;
         }
       }
       .centerTop{
-        background-image: url('../../assets/img/cremaWebImg/textTop.png');
-        background-size: 100% 100%;
+        > div:nth-child(2){
+          background-image: url('../../assets/img/cremaWebImg/usdcFirst.png');
+        }
+        .centerTopLeft{
+          p{
+            color: #9EAAF7;
+            background: #1B2775;
+            width: 130px;
+          }
+        }
       }
       .centerMain{
-        margin-top: 60px;
-        background-image: url('../../assets/img/cremaWebImg/textMain.png');
-        background-size: 100% 100%;
+        margin-top: 30px;
+        > div:nth-child(2){
+          background-image: url('../../assets/img/cremaWebImg/usdcTwo.png');
+        }
+        .centerTopLeft{
+           p{
+            color: #9EDFF7;
+            background: #224F63;
+            width: 200px;
+          }
+        }
       }
       .centerBottom{
-        margin-top: 60px;
-        background-image: url('../../assets/img/cremaWebImg/textFooter.png');
-        background-size: 100% 100%;
-      }
-      // .centerBottom:hover{
-      //   background-image: url('../../assets/img/cremaWebImg/HovertextFooter.png');
-      // }
-    }
-    .edges{
-      background-image: url('../../assets/img/cremaWebImg/edges.png');
-      background-size: 100% 100%;
-      height: 580px;
-      width: 100%;
-      margin-top: 150px;
-      .botTop{
-        width: 1200px;
-        height: 90px;
-        line-height: 150px;
-        margin: 0 auto;
-        color: #fff;
-        font-size: 28px;
-        font-family: 'SansSerifExbFLF';
-        display: flex;
-        justify-content: center;
-        img{
-          width: 150px;
-          height: 70px;
+        margin-top: 30px;
+        > div:nth-child(2){
+          background-image: url('../../assets/img/cremaWebImg/usdcThree.png');
         }
-      }
-      .edgesAll{
-        width: 1000px;
-        height: 500px;
-        padding: 0 0 0 40px;
-        margin: 0 auto;
-        // margin-top: 20px;
-        display: flex;
-        justify-content: space-between;
-        .edgesLeft{
-          width: 450px;
-          height: 460px;
-          padding: 100px 0 116px;
-          margin: auto 0;
-          .Conce{
-            width: 450px;
-            font-size: 20px;
-            font-family: 'Montserrat-Bold';
-            color: #fff;
-          }
-          .CLMM{
-            width: 450px;
-            height: 120px;
-            margin-top: 40px;
-            color: #959CAC;
-            font-size: 18px;
-            line-height: 36px;
-            font-family: 'Avenir';
-          }
-          .edgesBtn{
-            margin-top: 60px;
-            width: 160px;
-            // border-bottom: 1px solid rgba(#fff,.5);
-            position: relative;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-             > div:nth-child(1){
-              width: 10px;
-              height: 10px;
-              border-radius: 50%;
-              background: rgba(#959CAC,.2);
-              cursor: pointer;
-            }
-            > div:nth-child(2){
-              // position: absolute;
-              top: -4px;
-              left: 60px;
-              width: 10px;
-              height: 10px;
-              border-radius: 50%;
-              background: rgba(#959CAC,.2);
-              cursor: pointer;
-            }
-            > div:nth-child(3){
-              // position: absolute;
-              top: -4px;
-              left: 135px;
-              width: 10px;
-              height: 10px;
-              border-radius: 50%;
-              background: rgba(#959CAC,.2);
-              cursor: pointer;
-            }
-            > div:nth-child(4){
-              // position: absolute;
-              top: -4px;
-              left: 200px;
-              width: 10px;
-              height: 10px;
-              border-radius: 50%;
-              background: rgba(#959CAC,.2);
-              cursor: pointer;
-            }
-            .btnSize{
-              width: 60px !important;
-              height: 22px !important;
-              background: none !important;
-              background-image: url('../../assets/img/cremaWebImg/cremaButton.png') !important;
-              background-size: 100% 100% !important;
-              border-radius: 0 !important;
-            }
-            .btnSize:hover{
-              background-image: url('../../assets/img/cremaWebImg/HovercremaButton.png') !important;
-            }
+        .centerTopLeft{
+          p{
+            color: #C49EF7;
+            background: #3A2273;
+            width: 150px;
           }
         }
-        .edgesRight{
-          width: 550px;
-          height: 430px;
-          background-image: url('../../assets/img/cremaWebImg/edgesFlyball.png');
-          background-size: 100% 100%;
-        }
-        .eone{
-          background-image: url('../../assets/img/cremaWebImg/edgesFlyball.png');
-        }
-        .etwo{
-          background-image: url('../../assets/img/cremaWebImg/edgesFlyballTwo.png');
-        }
-        .ethree{
-          background-image: url('../../assets/img/cremaWebImg/edgesFlyballThree.png');
-        }
-        .efour{
-          background-image: url('../../assets/img/cremaWebImg/edgesFlyballFour.png');
-        }
-
       }
     }
     .Roadmap{
       position: relative;
       width: 100%;
-      height: 800px;
+      height: 700px;
       margin: 0 auto;
-      margin-top: 30px;
       .botTop{
-        width: 1200px;
-        height: 150px;
-        line-height: 150px;
+        width: 900px;
+        height: 100px;
+        line-height: 70px;
         margin: 0 auto;
         color: #fff;
-        font-size: 28px;
-        font-family: 'SansSerifExbFLF';
+        font-size: 32px;
+        font-family: 'Helvetica-NeueBd';
         display: flex;
         justify-content: center;
-        img{
-          width: 150px;
-          height: 70px;
-        }
       }
       .RoadmapAll{
         width: 1000px;
@@ -857,6 +964,7 @@ export default {
         background: url('../../assets/img/cremaWebImg/roadmapFive.png') no-repeat center;
         background-size: 633px 345px;
         > div:nth-child(1){
+          height: 210px !important;
           padding-bottom: 40px;
           justify-content: space-between;
           align-items: flex-end;
@@ -872,7 +980,7 @@ export default {
                 height: 30px;
                 font-size: 16px;
                 color: #B6BED0;
-                font-family: 'Avenir';
+                font-family: 'Helvetica-NeueLt';
               }
               > div{
                 width: 12px;
@@ -888,7 +996,7 @@ export default {
             }
           }
           div:nth-child(3){
-            width: 230px;
+            width: 250px;
             > div{
               width: 100%;
               display: flex;
@@ -896,7 +1004,6 @@ export default {
                 height: 30px;
                 font-size: 16px;
                 color: #B6BED0;
-                font-family: 'Avenir';
               }
               > div{
                 width: 12px;
@@ -925,7 +1032,6 @@ export default {
                 height: 30px;
                 font-size: 16px;
                 color: #B6BED0;
-                font-family: 'Avenir';
               }
               > div{
                 width: 12px;
@@ -949,7 +1055,6 @@ export default {
                 height: 30px;
                 font-size: 16px;
                 color: #B6BED0;
-                font-family: 'Avenir';
               }
               > div{
                 width: 12px;
@@ -968,35 +1073,31 @@ export default {
         > div:nth-child(1),
         > div:nth-child(3){
           height: 240px;
-          // background: #ccc;
           display: flex;
           > div{
             padding: 20px 30px;
             background: #1F2328;
             border-radius: 10px;
-            font-family: 'Avenir';
+            font-family: 'Helvetica-NeueLt';
             > span{
               display: block;
               width: 100%;
               height: 30px;
               font-size: 16px;
               color: #B6BED0;
-              // font-family: 'Montserrat-Bold';
             }
             > p{
               padding-left: 20px;
               color: #7A85A0;
               font-size: 14px;
-              margin-bottom: 8px;
+              margin-bottom: 12px;
+              font-family: 'Helvetica-NeueLt';
             }
           }
         }
         > div:nth-child(2){
           width: 100%;
           height: 108px;
-          // display: flex;
-          // flex-wrap: nowrap;
-          // justify-content: center;
           > div:nth-child(1),
           > div:nth-child(3){
             height: 42px;
@@ -1027,22 +1128,22 @@ export default {
           }
         }
       }
+      .RoadmapAllH{
+        display: none;
+      }
     }
     .bottom{
-      // height: 970px;
       height: 845px;
-      margin-top: 60px;
-      background: rgba(#343F49,.1);
-      // background-image: url('../../assets/img/cremaWebImg/faqbgs.png');
-      // background-size: 105% 100%;
+      position: relative;
+      z-index: 20;
       .botTop{
-        width: 1200px;
-        height: 130px;
-        line-height: 150px;
+        width: 900px;
+        height: 100px;
+        line-height: 70px;
         margin: 0 auto;
         color: #fff;
-        font-size: 28px;
-        font-family: 'SansSerifExbFLF';
+        font-size: 32px;
+        font-family: 'Helvetica-NeueBd';
         display: flex;
         justify-content: center;
         img{
@@ -1054,23 +1155,22 @@ export default {
         width: 800px;
         margin: 0 auto;
         > div:nth-child(1){
-          font-family: 'Arial-Black';
+          font-family: 'Helvetica-NeueBd';
           background: #20262A;
           width: 800px;
           height: 64px;
           margin: 0 auto;
           color: #fff;
           font-size: 16px;
-          // line-height: 64px;
-          margin-bottom: 2px;
-          padding: 18px 30px;
+          margin-bottom: 10px;
+          padding: 22px 30px;
           display: flex;
           justify-content: space-between;
           cursor: pointer;
           div{
             width: 12px;
             height: 12px;
-            margin-top: 8px;
+            margin-top: 6px;
             background-image: url('../../assets/img/cremaWebImg/downpc.png');
             background-size: 100% 100%;
           }
@@ -1082,25 +1182,42 @@ export default {
           background: #282F34;
         }
         > div:nth-child(2){
-          font-family: 'SansSerifFLF-Demibold';
+          font-family: 'Helvetica-NeueLt';
           width: 800px;
-          // height: 220px;
           background: #1E2328;
           padding: 20px 30px;
           span{
             line-height: 26px;
-            font-size: 18px;
+            font-size: 16px;
             color: #959CAC;
           }
         }
       }
     }
     .bottomBig{
-      height: 970px !important;
+      height: 1080px !important;
+      .botBto{
+        > div:nth-child(1){
+          margin-bottom: 10px;
+        }
+        > div:nth-child(2){
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .footerBot{
+      position: absolute;
+      width: 100%;
+      height: 200px;
+      z-index: 1;
+      left: 0;
+      bottom: 0;
+      background-image: url('../../assets/img/cremaWebImg/bottomSi.png');
+      background-size: 100% 100%;
     }
   }
   .mainBig{
-    height: 4860px !important;
+    height: 4600px !important;
   }
   .footer{
     height: 220px;
@@ -1108,7 +1225,7 @@ export default {
     background: #14191E;
     padding: 40px 0 40px 0;
     .footerAll{
-      width: 1100px;
+      width: 1000px;
       height: 140px;
       margin: 0 auto;
       display: flex;
@@ -1201,126 +1318,255 @@ export default {
   }
 }
 @keyframes bounce-down {
-  25% {
-    transform: translateY(-4px);
-  }
+  25% { transform: translateY(-4px);}
   50%,
-  100% {
-    transform: translateY(0);
-  }
-  75% {
-    transform: translateY(4px);
-  }
+  100% { transform: translateY(0);}
+  75% { transform: translateY(4px);}
 }
 @keyframes bounce-opcity {
-  25% {
-    // opacity: 0.5;
-  }
-  // 40%{
-  //      opacity: 0.3;
-  // }
-  50% {
-    // opacity: 0;
-  }
-  75% {
-    // opacity: 0.5;
-  }
-  // 75% {
-  //      opacity: 0.9;
-  // }
-  100% {
-    // opacity: 1;
-  }
+  25% {}
+  // 40%{}
+  50% {}
+  75% {}
+  // 75% {}
+  100% {}
 }
 @media screen and (max-width: 1280px) {
   .outer{
-    .header{
-      width: 90%;
-    }
     .main{
-      height: 4715px;
-      .top{
-        width: 1280px;
-        > div:nth-child(1){
-          height: 777px;
-        }
-        > div:nth-child(2){
-          top: 490px;
-        }
+      .bottom{
+        height: 945px;
+      }
+      .bottomBig{
+        height: 1085px !important;
       }
     }
     .mainBig{
-      height: 4855px !important;
+      height: 4555px !important;
     }
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 950px) {
   .outer {
-    .header{
-      width: 345px;
-      height: 70px;
-      .navLeft{
-        width: 91px;
-        height: 21px;
-        img{
+    .headerAll{
+      .header{
+        width: 85%;
+        height: 70px;
+        .navLeft{
           width: 91px;
           height: 21px;
+          img{
+            width: 91px;
+            height: 21px;
+          }
         }
-      }
-      .navReight{
-        width: 112px;
-        height: 16px;
-        > a{
-          width: 120px;
-          padding: 16px 0 0 28px;
-        }
-        > div{
-          display: none;
+        .navReight{
+          width: 112px;
+          height: 16px;
+          > a{
+            width: 120px;
+            padding: 14px 0 0 22px;
+          }
+          > div{
+            display: none;
+          }
         }
       }
     }
     .main{
-      height: 4515px;
       .top{
         width: 100%;
-        height: 370px;
-         > div:nth-child(1){
-          background-image: url('../../assets/img/cremaWebImg/h5HeaderBall.png');
+        height: 550px;
+        background: #000;
+        overflow: hidden;
+        > div:nth-child(1){
           width: 100%;
-          height: 510px;
-          margin-top: -70px;
+          height: 100%;
+          position: relative;
+          .headerTop{
+            width: 100%;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            height: 48px;
+            padding-left: 0;
+            > div{
+              margin: 0 auto;
+            }
+          }
+          .topText{
+            position: absolute;
+            top: 80px;
+            height: 225px;
+            padding: 0 0 0 0;
+            text-align: center;
+            justify-content: center;
+            align-content: space-around;
+            p{
+              font-size: 28px;
+              width: 70%;
+              line-height: 35px;
+            }
+            div{
+              font-size: 14px;
+              width: 95%;
+              line-height: 24px;
+              padding: 0 25px;
+            }
+          }
+          .boootmB{
+            width: 100%;
+            justify-content: space-around;
+            position: absolute;
+            bottom: -20px;
+            padding: 0 30px;
+            > a{
+              padding: 8px 0;
+              width: 132px !important;
+              height: 40px !important;
+            }
+          }
         }
         > div:nth-child(2){
-            top: 290px;
-          > a{
-            padding: 20px 0 0 48px;
+          height: 560px;
+          video{
+            position: absolute;
+            left: 0;
+            top: 92px;
+            width: 100%;
+            height: 600px;
+            z-index: 2;
+            /* background: transparent url('../../assets/img/cremaWebImg/hFicrema.png') 100% 100% / cover no-repeat ; */
+            background: url('../../assets/img/cremaWebImg/hFicrema.png') center center no-repeat;
+            background-size: 100% auto;
+          }
+          .webMp{
+            display: none;
+          }
+          .hfiveMp{
+            display: block;
           }
         }
       }
+      .products{
+        margin-top: 20px;
+        width: 100%;
+        height: 700px;
+        color: #fff;
+        position: relative;
+        > div:nth-child(1){
+          width: 100%;
+          height: 100%;
+          margin: 0 auto;
+          .botTop{
+            width: 100%;
+            height: 64px;
+            font-size: 16px;
+            line-height: 64px;
+          }
+          .botCenter{
+            margin: 0 auto;
+            width: 336px;
+            height: 52px;
+            p{
+              display: none;
+            }
+            > div{
+              display: block;
+              width: 300px;
+              height: 32px;
+              color: #fff !important;
+              position: relative;
+              .changepas{
+                background: linear-gradient(270deg, #5FE6D0 0%, #60B2F1 33%, #9380FF 68%, #E590FF 100%);
+                border-radius: 20px;
+              }
+              span{
+                display: block;
+                width: 100%;
+                height: 100%;
+                line-height: 32px;
+                text-align: center;
+              }
+              div{
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                right: 16px;
+                top: 8px;
+                background-image: url('../../assets/img/cremaWebImg/arrowDown.png');
+                background-size: 100% 100%;
+              }
+              .changeFive{
+                background-image: url('../../assets/img/cremaWebImg/arrowUp.png');
+              }
+            }
+          }
+          .fivenew{
+            height: 200px;
+            align-items: flex-start;
+            padding-top: 10px;
+            border-radius: 20px;
+            >div{
+              >span:nth-of-type(n+2){
+                height: 32px;
+                line-height: 32px;
+                margin-top: 16px;
+              }
+            }
+          }
+          > div:nth-child(3){
+            margin-top: 30px;
+            height: 550px;
+            justify-content: center;
+            align-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            > div:nth-child(1){
+              width: 345px;
+              height: 180px;
+              padding: 0 0 0 15px;
+              > p:nth-child(2){
+                margin-top: 20px;
+              }
+            }
+            > div:nth-child(2){
+              width: 345px;
+              height: 286px;
+            }
+          }
+        }
+        > div:nth-child(2){
+          width: 100%;
+        }
+        > div:nth-child(3){
+          display: none;
+        }
+      }
+      .productsNew{
+        height: 830px;
+      }
       .center{
-        height: 1390px;
+        height: 1800px;
         width: 100%;
         margin-top: 0;
-        padding: 0 16px;
         .botTop{
           width: 100%;
           height: 32px;
           font-size: 16px;
-          img{
-            width: 64px;
-            height: 32px;
-          }
+          line-height: 30px;
         }
         .centerAll{
-          width: 330px;
-          height: 390px;
+          width: 340px;
+          height: 535px;
           padding: 0;
+          flex-wrap: wrap;
+          align-content: space-between;
+          border-radius: 10px;
           .centerTopLeft{
-            width: 100%;
-            height: 200px;
-            padding: 245px 16px 0;
+            height: 230px;
+            padding: 20px 15px 0;
             .Conce{
-              width: 100%;
               font-size: 16px;
             }
             .CLMM{
@@ -1330,198 +1576,112 @@ export default {
               margin-top: 16px;
             }
           }
+          > div:nth-child(2){
+            width: 100%;
+            height: 270px;
+          }
         }
         .centerTop{
-          margin-top: 100px;
-          background-image: url('../../assets/img/cremaWebImg/OnehNew.png');
+          margin-top: 30px;
         }
         .centerMain{
           margin-top: 40px;
-          background-image: url('../../assets/img/cremaWebImg/ThreehNew.png');
         }
         .centerBottom{
           margin-top: 40px;
-          background-image: url('../../assets/img/cremaWebImg/TwohNew.png');
-        }
-      }
-      .edges{
-        margin-top: 110px;
-        width: 100%;
-        // width: 360px;
-        margin: 110px auto 0;
-        height: 536px;
-        background-image: url('../../assets/img/cremaWebImg/h5edges.png');
-        position: relative;
-        .botTop{
-          position: absolute;
-          top: -120px;
-          padding-left: 16px;
-          width: 100%;
-          height: 32px;
-          font-size: 16px;
-          img{
-            width: 64px;
-            height: 32px;
-          }
-        }
-        .edgesAll{
-          width: 100%;
-          height: 100%;
-          padding: 0;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-content: flex-start;
-          position: relative;
-          .edgesLeft{
-            width: 340px;
-            height: 100px;
-            padding: 0 16px 0;
-            margin: 20px 0 0 0;
-            .Conce{
-              width: 100%;
-              font-size: 14px;
-            }
-            .CLMM{
-              width: 100%;
-              font-size: 14px;
-              line-height: 20px;
-              margin-top: 16px;
-            }
-            .edgesBtn{
-              // display: none;
-              position: absolute;
-              bottom: 50px;
-              left: 110px;
-            }
-          }
-          .edgesRight{
-            width: 343px;
-            height: 286px;
-            margin-top: 30px;
-          }
         }
       }
       .Roadmap{
-        background: url('../../assets/img/cremaWebImg/h5Janclab.png') no-repeat;
+        // background: url('../../assets/img/cremaWebImg/h5Janclab.png') no-repeat;
         background-size: 40px 1140px;
         background-position:10px 65px;
         width: 100%;
-        // width: 360px;
-        margin-top: 80px;
-        height: 1250px;
+        height: 100%;
         .botTop{
           width: 100%;
           height: 32px;
           font-size: 16px;
           line-height: 32px;
-          img{
-            width: 64px;
-            height: 32px;
-          }
         }
         .RoadmapAll{
-          width: 280px;
-          position: relative;
-          background: none;
-          > div:nth-child(1){
-            height: 1000px;
-            position: relative;
-            >div{
-              width: 300px !important;
-            }
-            > div:nth-child(1){
-              height: 140px;
-              position: absolute;
-              top: 40px;
-              display: flex;
-              flex-wrap: wrap;
-              align-content: center;
-            }
-            > div:nth-child(2){
-              position: absolute;
-              height: 200px;
-              top: 500px;
-              display: flex;
-              flex-wrap: wrap;
-              align-content: center;
-              > div{
-                > div{
-                  display: none;
-                }
-              }
-            }
-            > div:nth-child(3){
-              height: 250px;
-              position: absolute;
-              top: 717px;
-              display: flex;
-              flex-wrap: wrap;
-              align-content: center;
-            }
-          }
-          > div:nth-child(2){
-            display: none;
-          }
-          > div:nth-child(3){
-            height: 1000px;
-            position: absolute;
-            top: -1130px;
+          display: none;
+        }
+        .RoadmapAllH{
+          display: block;
+          width: 300px;
+          margin: 34px auto 0;
+          height: 100%;
+          color: #fff;
+          > div{
             display: flex;
-            align-content: space-around;
-            position: relative;
-            > div{
-              > div{
-                justify-content: space-between;
-              }
-            }
+            justify-content: space-between;
             > div:nth-child(1){
-              position: absolute;
-              width: 300px;
-              height: 270px;
-              top: 335px;
-              display: flex;
-              flex-wrap: wrap;
-              align-content: center;
+              width: 20px;
+              > div:nth-child(1){
+                width: 20px;
+                height: 20px;
+                background: url('../../assets/img/cremaWebImg/spanceBut.png') no-repeat;
+                background-size: 100% 100%;
+              }
               > div:nth-child(2){
-                margin-bottom: 20px;
+                width: 0px;
+                height: 90%;
+                margin: 0 auto;
+                border-right: 2px solid;
+                border-image: linear-gradient(360deg, rgba(171, 108, 255, 0), rgba(125, 255, 238, 1)) 2 2;
               }
             }
             > div:nth-child(2){
-              position: absolute;
-              height: 220px;
-              width: 300px;
-              top: 1115px;
-              display: flex;
-              flex-wrap: wrap;
-              align-content: center;
-            }
-          }
-          > div:nth-child(1),
-          > div:nth-child(3){
-            width: 300px;
-            flex-wrap: wrap;
-            > div{
-              padding: 10px 20px;
-              > div{
+              width: 260px;
+              > div:nth-child(1){
+                font-size: 20px;
+              }
+              > div:nth-child(2){
+                width: 100%;
+                background: #1F2328;
+                border-radius: 10px;
+                padding: 30px 15px;
+                margin-top: 10px;
+                span{
+                  display: block;
+                  font-size: 12px;
+                  color: #7A85A0;
+                  line-height: 20px;
+                  margin-left: 10px;
+                  font-family: 'Helvetica-NeueLt';
+                }
+                p{
+                  line-height: 30px;
+                  font-size: 14px;
+                  font-family: 'Helvetica-NeueLt';
+                  color: #B6BED0;
+                }
                 > div{
-                  display: none;
+                  display: flex;
+                  > div{
+                    width: 12px;
+                    height: 12px;
+                    margin: 10px 0 0 20px;
+                    background-image: url('../../assets/img/cremaWebImg/downpc.png');
+                    background-size: 100% 100%;
+                  }
+                  .jancla{
+                    background-image: url('../../assets/img/cremaWebImg/uppc.png');
+                  }
                 }
               }
             }
+          }
+          > div:nth-child(2),
+          > div:nth-child(3),
+          > div:nth-child(4),
+          > div:nth-child(5){
+            margin-top: 20px;
           }
         }
-        // > div:nth-child(3){
-        //   position: absolute;
-        //   top: 0;
-        //   left: 10px;
-        //   width: 28px;
-        //   height: 200px;
-        //   background-image: url('../../assets/img/cremaWebImg/h5linecA.png');
-        //   background-size: 100% 100%;
-        // }
       }
       .bottom{
-        height: 738px;
+        height: 800px;
         width: 100%;
         padding-top: 1px;
         .botTop{
@@ -1536,44 +1696,45 @@ export default {
           }
         }
         .botBto{
-          // display: none;
           width: 80%;
           > div:nth-child(1){
             padding: 14px 20px;
             width: 100%;
-            // line-height: 30px;
-            font-size: 12px;
+            font-size: 14px;
             height: 60px;
             span{
               width: 210px;
+              line-height: 16px;
             }
             .cftcy{
               margin-top: 6px;
             }
           }
           > div:nth-child(2){
-            // height: 220px;
             width: 100%;
             padding: 5px 20px;
             span{
               font-size: 12px;
-              line-height: 15px;
+              line-height: 18px;
             }
           }
         }
-        
+
       }
       .bottomBig{
-        height: 955px !important;
+        height: 1055px !important;
+      }
+      .footerBot{
+        height: 70px;
       }
     }
     .mainBig{
-      height: 4750px !important;
+      height: 100% !important;
     }
     .footer{
       width: 100%;
-      height: 220px;
-      padding: 0 0 0 0;
+      height: 240px;
+      padding: 20px 0 0 0;
       background-image: url('../../assets/img/cremaWebImg/footerbgs.png');
       background-size: 100% 100%;
       .footerAll{
@@ -1596,11 +1757,11 @@ export default {
             width: 180px;
              p{
               text-align: center;
+              font-size: 14px;
             }
           }
         }
         > div:nth-child(3){
-          // display: none;
           p{
             text-align: center;
           }
@@ -1619,7 +1780,6 @@ export default {
           width: 100%;
           position: absolute;
           height: 66px;
-          // left: 106px;
           top: 65px;
           margin: 0 auto;
           justify-content: center;

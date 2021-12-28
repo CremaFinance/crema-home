@@ -35,11 +35,22 @@
   src: url("../fonts/SansSerifFLF-Demibold.otf");
   // src: url('../fonts/Rubik-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
 }
-// @font-face {
-//   font-family: "Rubik-Medium";
-//   src: url("../fonts/Rubik-Medium.ttf");
-//   // src: url('../fonts/Rubik-Medium.ttff') format('truetype'); /* Safari, Android, iOS */
-// }
+@font-face {
+  font-family: "Helvetica-Black";
+  src: url("../fonts/HelveticaBlk___.ttf");
+  // src: url('../fonts/Rubik-Medium.ttff') format('truetype'); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "Helvetica-NeueBd";
+  src: url("../fonts/HelveticaNeueBd.ttf");
+  // src: url('../fonts/Rubik-Medium.ttff') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "Helvetica-NeueLt";
+  src: url("../fonts/HelveticaNeueLt.ttf");
+  // src: url('../fonts/Rubik-Medium.ttff') format('truetype'); /* Safari, Android, iOS */
+}
 /* 在全局CSS里引用: */
 /* 滚动条宽度 */
 // ::-webkit-scrollbar {
