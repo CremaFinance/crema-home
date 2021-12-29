@@ -36,10 +36,10 @@
           </div>
           <div>
             <video class="webMp" muted playsinline loop autoplay data-wf-ignore="true" data-object-fit="cover">
-              <source src="../../assets/img/cremaWebImg/covercc.mp4" type="video/mp4">
+              <source src="../../assets/img/cremaWebImg/covercc.webm" type="video/mp4">
             </video>
             <video class="hfiveMp" preload="none" muted playsinline loop autoplay data-wf-ignore="true" data-object-fit="cover">
-              <source src="../../assets/img/cremaWebImg/cremanewH5.mp4" type="video/mp4">
+              <source src="../../assets/img/cremaWebImg/cremanewH5.webm" type="video/mp4">
             </video>
           </div>
       </div>
@@ -119,14 +119,14 @@
                   <span>MVP Release</span>
                   <div @click="changeJan" :class="isJan ? 'jancla':''"></div>
                </div>
-               <p v-for="item in janForm" v-if="isJan">{{item.val}}</p>
+               <div v-show="isJan"><p v-for="(item,index) in janForm" :key="index">{{item.val}}</p></div>
              </div>
              <div>
                 <div>
                   <span>DAO Platform Started</span>
                   <div @click="changemar" :class="ismar ? 'jancla':''"></div>
                 </div>
-                <p style="width:190px;" v-for="item in marForm" v-if="ismar">{{item.val}}</p>
+                <div v-show="ismar"><p v-for="(item,index) in marForm" :key="index">{{item.val}}</p></div>
                 <div>
                   <span>CLMM V2</span>
                 </div>
@@ -151,12 +151,12 @@
                   <span>Mainnet Beta Release</span>
                   <div @click="changedec" :class="isdec ? 'jancla':''"></div>
                </div>
-               <p style="width:190px;" v-for="item in decForm" v-if="isdec">{{item.val}}</p>
+               <div v-show="isdec"><p v-for="(item,index) in decForm" :key="index">{{item.val}}</p></div>
                <div>
                   <span>Integrate with Aggregators</span>
                   <div @click="changeint" :class="isint ? 'jancla':''"></div>
                </div>
-               <p v-for="item in intForm" v-if="isint">{{item.val}}</p>
+               <div v-if="isint"><p v-for="(item,index) in intForm" :key="index">{{item.val}}</p></div>
              </div>
              <div>
               <span>Multichain Versions</span>
@@ -192,12 +192,12 @@
                   <p>Mainnet Beta Release</p>
                   <div @click="changedec" :class="isdec ? 'jancla':''"></div>
                 </div>
-                <span v-for="item in decForm" v-if="isdec">{{item.val}}</span>
+                <div class="changeRoad" v-if="isdec"><span v-for="(item,index) in decForm" :key="index">{{item.val}}</span></div>
                 <div>
                     <p>Integrate with Aggregators</p>
                     <div @click="changeint" :class="isint ? 'jancla':''"></div>
                 </div>
-                <span v-for="item in intForm" v-if="isint">{{item.val}}</span>
+                <div class="changeRoad" v-if="isint"><span v-for="(item,index) in intForm" :key="index">{{item.val}}</span></div>
               </div>
             </div>
           </div>
@@ -214,7 +214,7 @@
                     <p>MVP Release</p>
                     <div @click="changeJan" :class="isJan ? 'jancla':''"></div>
                 </div>
-                <span v-for="item in janForm" v-if="isJan">{{item.val}}</span>
+                <div class="changeRoad" v-if="isJan"><span v-for="(item,index) in janForm" :key="index">{{item.val}}</span></div>
               </div>
             </div>
           </div>
@@ -244,7 +244,7 @@
                     <p>DAO Platform Started</p>
                     <div @click="changemar" :class="ismar ? 'jancla':''"></div>
                 </div>
-                <span v-for="item in marForm" v-if="ismar">{{item.val}}</span>
+                <div class="changeRoad" v-if="ismar"><span v-for="(item,index) in marForm" :key="index">{{item.val}}</span></div>
                 <p>CLMM V2</p>
                 <p>Internal Oracle</p>
               </div>
@@ -256,7 +256,7 @@
         <div class="botTop">
           <span>FAQ</span>
         </div>
-        <div class="botBto" v-for="item in faqForm"  @click="faqText(item)">
+        <div class="botBto" v-for="(item,index) in faqForm" :key="index"  @click="faqText(item)">
           <div>
             <span :class="item.ccp ? 'cftcy':''">{{item.value}}</span>
             <div :class="faqVal == item.child ? 'change' : ''"></div>
@@ -994,6 +994,9 @@ export default {
                  background-image: url('../../assets/img/cremaWebImg/uppc.png');
               }
             }
+            > div:nth-child(3){
+              display: block;
+            }
           }
           div:nth-child(3){
             width: 250px;
@@ -1016,6 +1019,9 @@ export default {
               .jancla{
                  background-image: url('../../assets/img/cremaWebImg/uppc.png');
               }
+            }
+            > div:nth-child(2){
+              display: block;
             }
           }
         }
@@ -1044,6 +1050,12 @@ export default {
               .jancla{
                  background-image: url('../../assets/img/cremaWebImg/uppc.png');
               }
+            }
+            > div:nth-child(2){
+              display: block;
+            }
+            > div:nth-child(4){
+              display: block;
             }
           }
           > div:nth-child(2){
@@ -1086,7 +1098,7 @@ export default {
               font-size: 16px;
               color: #B6BED0;
             }
-            > p{
+            p{
               padding-left: 20px;
               color: #7A85A0;
               font-size: 14px;
@@ -1670,6 +1682,9 @@ export default {
                   }
                 }
               }
+              .changeRoad{
+                display: block !important;
+              }
             }
           }
           > div:nth-child(2),
@@ -1745,6 +1760,9 @@ export default {
           margin: 0 auto;
           height: 100px;
           width: 60%;
+          .ReiImg{
+            width: 80%;
+          }
         }
         > div:nth-child(2){
           height: 52px;
