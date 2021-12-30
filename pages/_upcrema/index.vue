@@ -51,12 +51,12 @@
           <div class="botCenter" :class="productsDetail ? 'fivenew':''">
             <p @click="changeP('a')" :class="changeVal == 'a'? 'changeClass':''">Concentrated Liquidity</p>
             <p @click="changeP('b')" :class="changeVal == 'b'? 'changeClass':''">NFT Liquidity Farming</p>
-            <p @click="changeP('c')" :class="changeVal == 'c'? 'changeClass':''">Smart Aggregator</p>
+            <p @click="changeP('c')" :class="changeVal == 'c'? 'changeClass':''">Smart Router</p>
             <p @click="changeP('d')" :class="changeVal == 'd'? 'changeClass':''">Cross-Chain Solutions</p>
             <div>
                 <span @click="changehFive()" :class="changeVal == 'a' ? 'changepas' : ''">Concentrated Liquidity</span>
                 <span @click="changeP('b')" v-if="productsDetail"  :class="changeVal == 'b' ? 'changepas' : ''">NFT Liquidity Farming</span>
-                <span @click="changeP('c')" v-if="productsDetail"  :class="changeVal == 'c' ? 'changepas' : ''">Smart Aggregator</span>
+                <span @click="changeP('c')" v-if="productsDetail"  :class="changeVal == 'c' ? 'changepas' : ''">Smart Router</span>
                 <span @click="changeP('d')" v-if="productsDetail"  :class="changeVal == 'd' ? 'changepas' : ''">Cross-Chain Solutions</span>
                 <div @click="changehFive()" :class="productsDetail ? 'changeFive' : ''"></div>
             </div>
@@ -114,12 +114,13 @@
                <span>Devnet Beta Release</span>
              </div>
              <div>
-               <span>TGE & IDO Event</span>
+               <span>TGE & IDO</span>
                <div>
                   <span>MVP Release</span>
                   <div @click="changeJan" :class="isJan ? 'jancla':''"></div>
                </div>
                <div v-show="isJan"><p v-for="(item,index) in janForm" :key="index">{{item.val}}</p></div>
+               <span>Multichain Versions</span>
              </div>
              <div>
                 <div>
@@ -128,7 +129,6 @@
                 </div>
                 <div v-show="ismar"><p v-for="(item,index) in marForm" :key="index">{{item.val}}</p></div>
                 <div>
-                  <span>CLMM V2</span>
                 </div>
                 <span>Internal Oracle</span>
              </div>
@@ -136,13 +136,13 @@
            <div>
              <div>
                <span>2021 Nov</span>
-               <span>2022 Jan</span>
-               <span>2022 Q2</span>
+               <span>2022 Q1</span>
+               <span>2022 Q3</span>
              </div>
              <div></div>
              <div>
                <span>2021 Dec</span>
-               <span>2022 Feb-Mar</span>
+               <span>2022 Q2</span>
              </div>
            </div>
            <div>
@@ -159,9 +159,9 @@
                <div v-if="isint"><p v-for="(item,index) in intForm" :key="index">{{item.val}}</p></div>
              </div>
              <div>
-              <span>Multichain Versions</span>
               <span>Cross-Chain Swap</span>
               <span>Liquidity Migration</span>
+              <span>CLMM V2</span>
              </div>
            </div>
         </div>
@@ -207,28 +207,15 @@
               <div></div>
             </div>
             <div>
-              <div>2022 Jan</div>
+              <div>2022 Q1</div>
               <div>
-                <p>TGE & IDO Event</p>
+                <p>TGE & IDO</p>
                 <div>
                     <p>MVP Release</p>
                     <div @click="changeJan" :class="isJan ? 'jancla':''"></div>
                 </div>
                 <div class="changeRoad" v-if="isJan"><span v-for="(item,index) in janForm" :key="index">{{item.val}}</span></div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div>
-              <div></div>
-              <div></div>
-            </div>
-            <div>
-              <div>2022 Feb-Mar</div>
-              <div>
                 <p>Multichain Versions</p>
-                <p>Cross-Chain Swap</p>
-                <p>Liquidity Migration</p>
               </div>
             </div>
           </div>
@@ -240,12 +227,25 @@
             <div>
               <div>2022 Q2</div>
               <div>
+                <p>Cross-Chain Swap</p>
+                <p>Liquidity Migration</p>
+                <p>CLMM V2</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div></div>
+              <div></div>
+            </div>
+            <div>
+              <div>2022 Q3</div>
+              <div>
                 <div>
                     <p>DAO Platform Started</p>
                     <div @click="changemar" :class="ismar ? 'jancla':''"></div>
                 </div>
                 <div class="changeRoad" v-if="ismar"><span v-for="(item,index) in marForm" :key="index">{{item.val}}</span></div>
-                <p>CLMM V2</p>
                 <p>Internal Oracle</p>
               </div>
             </div>
@@ -363,7 +363,7 @@ export default {
           val:'NFT Liquidity Farming'
         },
         {
-          val:'LAAS (Liquidity as a Service)'
+          val:'Info Charts'
         }
       ],
       isq:false,
@@ -390,10 +390,10 @@ export default {
       ismar:false,
       marForm:[
         {
-          val:'vCRM Stake & Mint'
+          val:'veCRM Stake and Mint'
         },
         {
-          val:'Proposal & Voting'
+          val:'Proposal and Voting'
         },
         {
           val:'Boosting'
@@ -459,7 +459,7 @@ export default {
         this.changeValDetail.bottom = "A special gift from Crema. The non-fungible liquidity contributed by liquidity providers are eligible to earn extra rewards from Crema's NFT Liquidity Farming pools."
       }
       if(val=='c'){
-        this.changeValDetail.top = 'Smart Aggregator',
+        this.changeValDetail.top = 'Smart Router',
         this.changeValDetail.bottom = "Externally integrated by Jupiter, the powerful aggregator on Solana, internally equipped with Crema's own routing system, Crema always delivers the best price in the ecosystem to its users. "
       }
       if(val=='d'){
