@@ -116,7 +116,7 @@
              <div>
                <span>TGE & IDO</span>
                <div>
-                  <span>MVP Release</span>
+                  <span>V1.0 Release</span>
                   <div @click="changeJan" :class="isJan ? 'jancla':''"></div>
                </div>
                <div v-show="isJan"><p v-for="(item,index) in janForm" :key="index">{{item.val}}</p></div>
@@ -211,7 +211,7 @@
               <div>
                 <p>TGE & IDO</p>
                 <div>
-                    <p>MVP Release</p>
+                    <p>V1.0 Release</p>
                     <div @click="changeJan" :class="isJan ? 'jancla':''"></div>
                 </div>
                 <div class="changeRoad" v-if="isJan"><span v-for="(item,index) in janForm" :key="index">{{item.val}}</span></div>
