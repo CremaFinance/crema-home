@@ -625,7 +625,7 @@ export default {
   .main{
     width: 100%;
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     object-fit: cover;
     .top{
       height: 580px;
@@ -711,7 +711,6 @@ export default {
         position: absolute;
         background: #000;
         height: 560px;
-
         // video{
         //   margin: auto;
         //   min-width: 100%;
@@ -722,9 +721,9 @@ export default {
         // }
         video{
           position: absolute;
-          left: 8%;
+          left: 23%;
           top: 30px;
-          width: 100%;
+          width: 70%;
           height: 480px;
           z-index: 2;
         }
@@ -1358,9 +1357,35 @@ export default {
     }
   }
 }
-@media screen and (max-width: 950px) {
-  .outer {
+@media screen and (max-width: 1015px) {
+  .outer{
     .headerAll{
+      width: 1000px;
+    }
+    .main{
+      .bottom{
+        height: 945px;
+      }
+      .bottomBig{
+        height: 1085px !important;
+      }
+      .top{
+        width: 1000px;
+      }
+      .products{
+        width: 1000px;
+      }
+    }
+    .mainBig{
+      height: 4555px !important;
+    }
+  }
+}
+@media screen and (max-width: 750px) {
+  .outer {
+    background: #13191f;
+    .headerAll{
+      width: 100%;
       .header{
         width: 85%;
         height: 70px;
@@ -1446,7 +1471,7 @@ export default {
             left: 0;
             top: 92px;
             width: 100%;
-            height: 600px;
+            height: 650px;
             z-index: 2;
             /* background: transparent url('../../assets/img/cremaWebImg/hFicrema.png') 100% 100% / cover no-repeat ; */
             background: url('../../assets/img/cremaWebImg/hFicrema.png') center center no-repeat;
