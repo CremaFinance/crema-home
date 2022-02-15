@@ -14,7 +14,7 @@
             <a href="https://discord.gg/hCaFmvvPYH" target="_blank"></a>
           </div>
           <div class="center"></div>
-          <a href="https://beta.crema.finance/" target="_blank">Access App</a>
+          <a href="https://app.crema.finance/#/" target="_blank">Launch APP</a>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
               <div>Swap, earn and build with Crema's programmable liquidity network and unleash the full potential of your assets.</div>
             </div>
             <div class="boootmB">
-              <a href="https://beta.crema.finance/" target="_blank"><span>Beta APP</span></a>
+              <a href="https://app.crema.finance/#/" target="_blank"><span>Launch APP</span></a>
               <a href="https://gitbook.crema.finance/" target="_blank"><span>Docs</span></a>
             </div>
           </div>
