@@ -102,6 +102,14 @@
           <div></div>
         </div>
       </div>
+      <div class="auditedBy">
+        <div class="botTop">
+          <span>Audited By</span>
+        </div>
+        <a href="https://www.bramah.systems/" target="_blank"></a>
+        <div></div>
+        <div></div>
+      </div>
       <div class="Roadmap">
         <div class="botTop">
           <span>Roadmap</span>
@@ -120,9 +128,10 @@
                   <div @click="changeJan" :class="isJan ? 'jancla':''"></div>
                </div>
                <div v-show="isJan"><p v-for="(item,index) in janForm" :key="index">{{item.val}}</p></div>
-               <span>Multichain Versions</span>
+               <!-- <span>Multichain Versions</span> -->
              </div>
              <div>
+                <span>CLMM V2</span>
                 <div>
                   <span>DAO Platform Started</span>
                   <div @click="changemar" :class="ismar ? 'jancla':''"></div>
@@ -159,9 +168,10 @@
                <div v-if="isint"><p v-for="(item,index) in intForm" :key="index">{{item.val}}</p></div>
              </div>
              <div>
+              <span>Multichain Versions</span>
               <span>Cross-Chain Swap</span>
-              <span>Liquidity Migration</span>
-              <span>CLMM V2</span>
+              <!-- <span>Liquidity Migration</span> -->
+              <!-- <span>CLMM V2</span> -->
              </div>
            </div>
         </div>
@@ -215,7 +225,7 @@
                     <div @click="changeJan" :class="isJan ? 'jancla':''"></div>
                 </div>
                 <div class="changeRoad" v-if="isJan"><span v-for="(item,index) in janForm" :key="index">{{item.val}}</span></div>
-                <p>Multichain Versions</p>
+                <!-- <p>Multichain Versions</p> -->
               </div>
             </div>
           </div>
@@ -227,9 +237,9 @@
             <div>
               <div>2022 Q2</div>
               <div>
+                <p>Multichain Versions</p>
                 <p>Cross-Chain Swap</p>
-                <p>Liquidity Migration</p>
-                <p>CLMM V2</p>
+                <!-- <p>Liquidity Migration</p> -->
               </div>
             </div>
           </div>
@@ -241,6 +251,7 @@
             <div>
               <div>2022 Q3</div>
               <div>
+                <p>CLMM V2</p>
                 <div>
                     <p>DAO Platform Started</p>
                     <div @click="changemar" :class="ismar ? 'jancla':''"></div>
@@ -272,22 +283,27 @@
     <div class="footer">
       <div class="footerAll">
         <div>
-          <img src="../../assets/img/cremaWebImg/footerLogo.png" alt="">
+          <img style="width: 160px;height: 38px;" src="../../assets/img/cremaWebImg/footerLogo.png" alt="">
           <div class="ReiImg">
-            <a href="https://twitter.com/Crema_Finance" target="_blank"></a>
-            <a href="https://t.me/cremafinance" target="_blank"></a>
-            <a href="https://medium.com/@Crema.finance" target="_blank"></a>
-            <a href="https://discord.gg/hCaFmvvPYH" target="_blank"></a>
-          </div>
-        </div>
-        <div>
-          <div>
-            <p>Business Cooperation</p>
-            <p>bd@crema.finance</p>
-          </div>
-          <div>
-            <p>General Inquiries</p>
-            <p>hello@crema.finance</p>
+            <div>
+              <p>Resources</p>
+              <p><a href="https://gitbook.crema.finance/" target="_blank">Docs</a></p>
+              <p><a href="https://docsend.com/view/agezs89iaxrsa58u" target="_blank">Deck</a></p>
+              <p><a href="https://bramah.systems/audits/Crema_Finance_Audit_Bramah.pdf" target="_blank">Audit Report</a></p>
+              <p><a href="https://defillama.com/protocol/crema-finance" target="_blank">DefiLlama</a></p>
+            </div>
+            <div>
+              <p>Social Media</p>
+              <p><a href="https://twitter.com/Crema_Finance" target="_blank">Twitter</a></p>
+              <p><a href="https://t.me/cremafinance" target="_blank">Telegram</a></p>
+              <p><a href="https://medium.com/@Crema.finance" target="_blank">Medium</a></p>
+              <p><a href="https://discord.gg/hCaFmvvPYH" target="_blank">Discord</a></p>
+            </div>
+            <div>
+              <p style="height:36px;">Contact</p>
+              <p style="height:57px;">General Inquiries: <span>hello@crema.finance</span></p>
+              <p style="height:97px;">Business Cooperation: <span>bd@crema.finance</span></p>
+            </div>
           </div>
         </div>
         <div>
@@ -351,7 +367,7 @@ export default {
           child:"Yes, absolutely. Since the CLMM liquidity providers on Crema are receiving NFT(non-fungible token) instead of the common fungible LP tokens, it is actually challenging for CLMM to support liquidity mining. However, Crema has already got its plan. It will launch its LP NFT farming function soon after its MVP launch. Extra incentives will be rewarded to liquidity providers fairly and precisely according to the effective value of their liquidity positions. Besides, general staking and LP farming will also be supported."
         },{
           value:'8. Any valuable utilities for $CRM token?',
-          child:"There are three major token utilities for Crema, which namely are staking, boosting and governance. Users could stake CRM to get vCRM and vCRM owners could not only earn a cut from Crema's transaction fee revenue, but can also trigger other utilities. They can use vCRM to boost their liquidity mining APR or to vote and make proposals through the DAO."
+          child:"There are three major token utilities for Crema, which namely are staking, boosting and governance. Users could stake CRM to get veCRM and veCRM owners could not only earn a cut from Crema's transaction fee revenue, but can also trigger other utilities. They can use veCRM to boost their liquidity mining APR or to vote and make proposals through the DAO."
         },{
           value:'9. Which wallets are accessible to Crema?',
           child:"Crema supports all mainstream Solana wallets, such as Phantom, Sollet, Solong, etc. If you don't have a Solana wallet previously, then Phantom Wallet is recommended. You can install its Web3 plugin to your browser and top it up with some SOL balance before accessing Crema."
@@ -940,6 +956,46 @@ export default {
         }
       }
     }
+    .auditedBy{
+      width: 100%;
+      height: 350px;
+      position: relative;
+      .botTop{
+        width: 900px;
+        height: 100px;
+        line-height: 70px;
+        margin: 0 auto;
+        color: #fff;
+        font-size: 32px;
+        font-family: 'Helvetica-NeueBd';
+        display: flex;
+        justify-content: center;
+      }
+      a{
+        display: block;
+        margin: 0 auto;
+        width: 100px;
+        height: 140px;
+        background-image: url('../../assets/img/cremaWebImg/byLogo.svg');
+        background-size: 100% 100%;
+      }
+      > div:nth-child(3),
+      > div:nth-child(4){
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background-size: 100% 100%;
+        top: -150px;
+      }
+      > div:nth-child(3){
+        background-image: url('../../assets/img/cremaWebImg/productsLeft.png');
+        left: 0;
+      }
+      > div:nth-child(4){
+        background-image: url('../../assets/img/cremaWebImg/productsRight.png');
+        right: 0;
+      }
+    }
     .Roadmap{
       position: relative;
       width: 100%;
@@ -1019,7 +1075,7 @@ export default {
                  background-image: url('../../assets/img/cremaWebImg/uppc.png');
               }
             }
-            > div:nth-child(2){
+            > div:nth-child(3){
               display: block;
             }
           }
@@ -1228,97 +1284,62 @@ export default {
     }
   }
   .mainBig{
-    height: 4600px !important;
+    height: 4800px !important;
   }
   .footer{
-    height: 220px;
+    height: 310px;
     width: 100%;
     background: #14191E;
     padding: 40px 0 40px 0;
     .footerAll{
       width: 1000px;
-      height: 140px;
+      height: 100%;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
+      align-content: space-between;
       flex-wrap: wrap;
       > div:nth-child(1){
         width: 100%;
-        height: 26px;
+        height: 210px;
         display: flex;
         flex-wrap: wrap;
-        align-content: space-around;
         justify-content: space-between;
-        img{
-          width: 110px;
-          height: 26px;
-        }
+        padding-bottom: 20px;
         .ReiImg{
+          width: 600px;
           display: flex;
-          justify-content: space-between;
-          align-content: space-around;
-          width: 210px;
-          height: 20px;
-          margin-top: 3px;
-          a{
-            width: 20px;
-            height: 20px;
-            background-size: 100% 100%;
+          div{
+            width: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            p,
+            p >a{
+              color: #959CAC;
+              width: 200px;
+              font-size: 14px;
+              font-family: 'Helvetica-NeueLt';
+              cursor: pointer;
+            }
+            > p:nth-child(1){
+              color: #fff;
+              font-family: 'Helvetica-NeueBd';
+            }
           }
-          > a:nth-child(1){
-          background-image: url('../../assets/img/cremaWebImg/icon_twitter@2x.png');
-          }
-          > a:nth-child(1):hover{
-            background-image: url('../../assets/img/cremaWebImg/icon_twitter.png');
-          }
-          > a:nth-child(2){
-            background-image: url('../../assets/img/cremaWebImg/icon_TelegramGroup@2x.png');
-          }
-          > a:nth-child(2):hover{
-            background-image: url('../../assets/img/cremaWebImg/icon_TelegramGroup.png');
-          }
-          > a:nth-child(3){
-            background-image: url('../../assets/img/cremaWebImg/icon_Medium@2x.png');
-          }
-          > a:nth-child(3):hover{
-            background-image: url('../../assets/img/cremaWebImg/icon_Medium.png');
-          }
-          > a:nth-child(4){
-            background-image: url('../../assets/img/cremaWebImg/icon_Discord@2x.png');
-          }
-          > a:nth-child(4):hover{
-            background-image: url('../../assets/img/cremaWebImg/icon_Discord.png');
+          > div:nth-child(1),
+          > div:nth-child(2){
+            p:hover,
+            p >a:hover{
+              color: #fff;
+            }
           }
         }
       }
       > div:nth-child(2){
         width: 100%;
-        height: 74px;
-        padding: 20px 0;
-        display: flex;
-        justify-content: flex-end;
-        border-bottom: 1px solid rgba(#fff,.1);
-        div{
-          width: 155px;
-          height: 40px;
-          p{
-            font-size: 16px;
-            font-family: 'Avenir';
-            text-align: right;
-            color: rgba(#fff,.8);
-          }
-          > p:nth-child(1){
-            color: rgba(255,255,255,0.5);
-            font-size: 14px;
-          }
-        }
-        > div:nth-child(1){
-          margin-right: 48px;
-        }
-      }
-      > div:nth-child(3){
-        width: 100%;
-        height: 16px;
+        height: 40px;
+        border-top: 1px solid rgba(#fff,.1);
+        padding-top: 20px;
         p{
           font-size: 14px;
           color: rgba(255,255,255,0.5);
@@ -1353,7 +1374,7 @@ export default {
       }
     }
     .mainBig{
-      height: 4555px !important;
+      height: 4755px !important;
     }
   }
 }
@@ -1628,6 +1649,17 @@ export default {
           margin-top: 40px;
         }
       }
+      .auditedBy{
+        // display: none;
+        width: 100%;
+        height: 220px;
+        .botTop{
+          width: 100%;
+          height: 40px;
+          font-size: 16px;
+          line-height: 32px;
+        }
+      }
       .Roadmap{
         // background: url('../../assets/img/cremaWebImg/h5Janclab.png') no-repeat;
         background-size: 40px 1140px;
@@ -1773,69 +1805,48 @@ export default {
     }
     .footer{
       width: 100%;
-      height: 240px;
-      padding: 20px 0 0 0;
-      background-image: url('../../assets/img/cremaWebImg/footerbgs.png');
-      background-size: 100% 100%;
+      height: 530px;
+      padding: 0;
+      background: #000;
       .footerAll{
         width: 100%;
-        height: 200px;
+        height: 530px;
+        padding: 40px;
         > div:nth-child(1){
+          display: block;
           justify-content: center;
-          margin: 0 auto;
-          height: 100px;
-          width: 60%;
+          height: 360px;
+          width: 100%;
           .ReiImg{
-            width: 80%;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 100%;
+            > div{
+              width: 140px;
+              height: 150px;
+            }
+            > div:nth-child(3){
+              width: 280px;
+              height: 120px;
+              p{
+                height: 20px !important;
+                width: 280px !important;
+              }
+            }
+          }
+          img{
+            width: 120px !important;
+            height: 28px !important;
           }
         }
         > div:nth-child(2){
           height: 52px;
-          padding: 0 10px;
-          justify-content: space-between;
-          > div:nth-child(1){
-            margin-right: 0;
-          }
-          div{
-            width: 180px;
-             p{
-              text-align: center;
-              font-size: 14px;
-            }
-          }
-        }
-        > div:nth-child(3){
+          // display: flex;
+          // justify-content: center;
           p{
-            text-align: center;
-          }
-        }
-        .footerLeft{
-          margin: 0 auto;
-          height: 210px;
-          img{
-            margin: -46px auto 0;
-          }
-          p{
-            margin: 20px auto -30px;
-          }
-        }
-        .footerReight{
-          width: 100%;
-          position: absolute;
-          height: 66px;
-          top: 65px;
-          margin: 0 auto;
-          justify-content: center;
-          .ReiImg{
-            width: 240px;
-            margin-top: -6px;
-          }
-          p{
-            margin: 12px auto 0;
-          }
-          .oneEmail{
-            margin: 0;
-            margin-top: 22px;
+            width: 230px;
+            margin:0 auto;
           }
         }
       }
