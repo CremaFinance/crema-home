@@ -11,7 +11,7 @@
             <a href="https://twitter.com/Crema_Finance" target="_blank"></a>
             <a href="https://t.me/cremafinance" target="_blank"></a>
             <a href="https://medium.com/@Crema.finance" target="_blank"></a>
-            <a href="https://discord.gg/hCaFmvvPYH" target="_blank"></a>
+            <a href="https://discord.gg/cremafinance" target="_blank"></a>
           </div>
           <div class="center"></div>
           <a href="https://app.crema.finance/#/" target="_blank">Launch APP</a>
@@ -31,8 +31,29 @@
             </div>
             <div class="boootmB">
               <a href="https://app.crema.finance/#/" target="_blank"><span>Launch APP</span></a>
-              <a href="https://gitbook.crema.finance/" target="_blank"><span>Docs</span></a>
+              <a href="https://gitbook.crema.finance/" target="_blank"><div>Docs</div></a>
             </div>
+            <!-- <div class="stats">
+              <div>
+                <div class="stats-left">
+                  <div>
+                    <span>$</span>
+                    <p>172.95M</p>
+                    <img src="../../assets/img/cremaWebImg/stats-head.png" alt="">
+                  </div>
+                  <div>Total Value Locked</div>
+                </div>
+                <p></p>
+                <div class="stats-right">
+                  <div>
+                    <span>$</span>
+                    <p>200.86M</p>
+                    <img src="../../assets/img/cremaWebImg/stats-head.png" alt="">
+                  </div>
+                  <div>Cumulative Trading Volume</div>
+                </div>
+              </div>
+            </div> -->
           </div>
           <div>
             <video class="webMp" muted playsinline loop autoplay data-wf-ignore="true" data-object-fit="cover">
@@ -297,7 +318,7 @@
               <p><a href="https://twitter.com/Crema_Finance" target="_blank">Twitter</a></p>
               <p><a href="https://t.me/cremafinance" target="_blank">Telegram</a></p>
               <p><a href="https://medium.com/@Crema.finance" target="_blank">Medium</a></p>
-              <p><a href="https://discord.gg/hCaFmvvPYH" target="_blank">Discord</a></p>
+              <p><a href="https://discord.gg/cremafinance" target="_blank">Discord</a></p>
             </div>
             <div>
               <p style="height:36px;">Contact</p>
@@ -323,6 +344,7 @@ export default {
       isShow: false,
       showActive: 1,
       screenHeight: '',
+      list:[],
       localeList: [
         {
           label: "English",
@@ -456,8 +478,22 @@ export default {
       return "xx.xx.xx";
     },
   },
-  mounted() {this.changeP('a');},
+  mounted() {
+    this.changeP('a');
+    this.getUct();
+    this.getDatum();
+  },
   methods: {
+    getDatum(){
+      this.timer = setInterval(()=>{
+          this.getUct();
+      },120000)
+    },
+    getUct() {
+      this.$axios.get(`https://api.crema.finance/tvl/24hour`).then((res) => {
+        this.list = res.data.data.pairs
+      })
+    },
     changehFive(){
       this.faqVal = '';
       this.productsDetail = !this.productsDetail;
@@ -581,18 +617,17 @@ export default {
         align-items: center;
         > a{
           display: block;
-          width: 138px;
-          height: 46px;
-          background-image: url('../../assets/img/cremaWebImg/buttonHeadca.png');
+          background: linear-gradient(270deg, #5FE6D0 0%, #60B2F1 33%, #9380FF 68%, #E590FF 100%);
           background-size: 100% 100%;
+          border-radius: 20px;
           cursor: pointer;
           font-size: 12px;
-          padding: 15px 32px;
+          padding: 8px 20px;
           color: #fff;
           font-family: 'Helvetica-NeueBd';
         }
         > a:hover{
-          background-image: url('../../assets/img/cremaWebImg/HoverbuttonHeadc.png');
+          background: linear-gradient(270deg, #BFFFF4 0%, #A9DAFF 33%, #AC9DFF 76%, #EAA3FF 100%);
         }
         .center{
           width: 1px;
@@ -641,7 +676,6 @@ export default {
   .main{
     width: 100%;
     position: relative;
-    // overflow: hidden;
     object-fit: cover;
     .top{
       height: 580px;
@@ -653,7 +687,7 @@ export default {
       flex-wrap: wrap;
       > div:nth-child(1){
         width: 1000px;
-        height: 600px;
+        height: 580px;
         margin: 0 auto;
         position: relative;
         z-index: 20;
@@ -701,24 +735,85 @@ export default {
             background-size: 100% 100%;
             font-size: 20px;
             color: #fff;
-            padding: 8px 0;
+            padding: 9px 0;
             display: flex;
             justify-content: center;
             width: 165px;
             height: 42px;
           }
           > a:nth-child(1){
-            background-image: url('../../assets/img/cremaWebImg/buttonHeadf.png');
+            background: linear-gradient(270deg, #5FE6D0 0%, #60B2F1 33%, #9380FF 68%, #E590FF 100%);
+            border-radius: 20px;
           }
           > a:nth-child(1):hover{
-            background-image: url('../../assets/img/cremaWebImg/buttonHeadg.png');
+            background: linear-gradient(270deg, #BFFFF4 0%, #A9DAFF 33%, #AC9DFF 76%, #EAA3FF 100%);
           }
           > a:nth-child(2){
             margin-left: 20px;
-            background-image: url('../../assets/img/cremaWebImg/webimgs.png');
+            box-sizing: border-box;
+            padding: 2px;
+            border-radius: 20px;
+            background-image: -webkit-linear-gradient(top, #5fe6d0 0%, #597bff 38%, #9380ff 72%, #e590ff 100%);
+            div {
+              width: 100%;
+              height: 100%;
+              border-radius: 20px;
+              background: #000;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
           }
           > a:nth-child(2):hover{
-            background-image: url('../../assets/img/cremaWebImg/webhover.png');
+            background-image: -webkit-linear-gradient(top, #BFFFF4 0%, #A9DAFF 33%, #AC9DFF 76%, #ebc0f8 100%);
+            >div{
+              background: rgb(32, 32, 32);
+            }
+          }
+        }
+        .stats{
+          width: 100%;
+          > div{
+            width: 460px;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            > p{
+              width: 1px;
+              height: 40px;
+              border-right: 2px rgba(#fff,0.2) solid;
+            }
+            .stats-left,
+            .stats-right{
+              width: 185px;
+              height: 100%;
+              color: #fff;
+              display: flex;
+              flex-wrap: wrap;
+              align-content: space-around;
+              > div:nth-child(1){
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                font-size: 20px !important;
+                span{
+                  margin-top: 8px;
+                }
+                > p{
+                  font-size: 36px !important;
+                }
+                img{
+                  width: 20px;
+                  height: 20px;
+                }
+              }
+              > div:nth-child(2){
+                font-size: 14px;
+                color: #ddd;
+              }
+            }
           }
         }
       }
@@ -726,15 +821,7 @@ export default {
         width: 100%;
         position: absolute;
         background: #000;
-        height: 560px;
-        // video{
-        //   margin: auto;
-        //   min-width: 100%;
-        //   min-height: 100%;
-        //   height: auto;
-        //   width: auto;
-        //   z-index: 2;
-        // }
+        height: 580px;
         video{
           position: absolute;
           left: 23%;
@@ -1423,7 +1510,11 @@ export default {
           height: 16px;
           > a{
             width: 120px;
-            padding: 14px 0 0 22px;
+            padding: 8px 20px;
+            background: linear-gradient(270deg, #5FE6D0 0%, #60B2F1 33%, #9380FF 68%, #E590FF 100%) !important;
+            > a:hover{
+               background: linear-gradient(270deg, #5FE6D0 0%, #60B2F1 33%, #9380FF 68%, #E590FF 100%) !important;
+            }
           }
           > div{
             display: none;
@@ -1480,9 +1571,54 @@ export default {
             padding: 0 30px;
             > a{
               padding: 8px 0;
-              width: 132px !important;
+              width: 150px !important;
               height: 40px !important;
             }
+            > a:nth-child(1){
+              border-radius: 20px;
+            }
+            > a:nth-child(1):hover{
+              background: linear-gradient(270deg, #5FE6D0 0%, #60B2F1 33%, #9380FF 68%, #E590FF 100%) !important;
+            }
+            > a:nth-child(2):hover{
+              background-image: -webkit-linear-gradient(top, #5fe6d0 0%, #597bff 38%, #9380ff 72%, #e590ff 100%) !important;
+              >div{
+                background: #000;
+              }
+            }
+          }
+          .stats{
+            position: absolute;
+            bottom: 20px;
+            > div{
+              width: 100%;
+              justify-content: space-around;
+              .stats-left,
+              .stats-right{
+                width: 160px;
+                justify-content: center;
+                > div:nth-child(1){
+                  > p{
+                    font-size: 28px !important;
+                  }
+                  img{
+                    width: 14px;
+                    height: 14px;
+                  }
+                }
+                > div:nth-child(2){
+                  width: 120px;
+                }
+                > div{
+                  text-align: center;
+                }
+              }
+              > p{
+                display: none;
+              }
+            }
+            
+            
           }
         }
         > div:nth-child(2){
@@ -1659,6 +1795,10 @@ export default {
           font-size: 16px;
           line-height: 32px;
         }
+        > div:nth-child(3),
+        > div:nth-child(4){
+        width: 100%;
+      }
       }
       .Roadmap{
         // background: url('../../assets/img/cremaWebImg/h5Janclab.png') no-repeat;
@@ -1842,8 +1982,6 @@ export default {
         }
         > div:nth-child(2){
           height: 52px;
-          // display: flex;
-          // justify-content: center;
           p{
             width: 230px;
             margin:0 auto;
