@@ -1,6 +1,0 @@
-{
-    "vue-i18n.i18nPaths": "locales",
-    "i18n-ally.localesPaths": [
-        "locales"
-    ]
-}
